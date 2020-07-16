@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace DoAn
 {
-    public partial class frmTTKH : Form
+    public partial class frmKhachHang : Form
     {
-        public frmTTKH()
+        public frmKhachHang()
         {
             InitializeComponent();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            TabPage p = (TabPage)this.Parent;
+            TabControl tabMain = (TabControl)p.Parent;
+            tabMain.TabPages.Remove(p);
         }
     }
 }

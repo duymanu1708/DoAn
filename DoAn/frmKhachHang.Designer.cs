@@ -1,6 +1,6 @@
 ﻿namespace DoAn
 {
-    partial class frmTTKH
+    partial class frmKhachHang
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTTKH));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKhachHang));
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
@@ -42,19 +44,17 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
+            this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
+            this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSua = new DevExpress.XtraEditors.SimpleButton();
+            this.btnThem = new DevExpress.XtraEditors.SimpleButton();
+            this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -98,6 +98,22 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin khách hàng";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(369, 55);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(166, 22);
+            this.textBox1.TabIndex = 13;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(316, 58);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 16);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "SDT :";
             // 
             // textBox6
             // 
@@ -193,88 +209,6 @@
             this.dataGridView2.Size = new System.Drawing.Size(695, 222);
             this.dataGridView2.TabIndex = 4;
             // 
-            // simpleButton5
-            // 
-            this.simpleButton5.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton5.Appearance.Options.UseFont = true;
-            this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
-            this.simpleButton5.Location = new System.Drawing.Point(827, 416);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(108, 70);
-            this.simpleButton5.TabIndex = 14;
-            this.simpleButton5.Text = "Hủy";
-            // 
-            // simpleButton4
-            // 
-            this.simpleButton4.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton4.Appearance.Options.UseFont = true;
-            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.simpleButton4.Location = new System.Drawing.Point(827, 340);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(108, 70);
-            this.simpleButton4.TabIndex = 13;
-            this.simpleButton4.Text = "Lưu";
-            // 
-            // simpleButton3
-            // 
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(713, 492);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(108, 70);
-            this.simpleButton3.TabIndex = 12;
-            this.simpleButton3.Text = "Xóa";
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(713, 416);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(108, 70);
-            this.simpleButton2.TabIndex = 11;
-            this.simpleButton2.Text = "Sửa";
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(713, 340);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(108, 70);
-            this.simpleButton1.TabIndex = 10;
-            this.simpleButton1.Text = "Thêm";
-            // 
-            // simpleButton6
-            // 
-            this.simpleButton6.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton6.Appearance.Options.UseFont = true;
-            this.simpleButton6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton6.ImageOptions.Image")));
-            this.simpleButton6.Location = new System.Drawing.Point(827, 492);
-            this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(108, 70);
-            this.simpleButton6.TabIndex = 15;
-            this.simpleButton6.Text = "Thoát";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(316, 58);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 16);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "SDT :";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(369, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(166, 22);
-            this.textBox1.TabIndex = 13;
-            // 
             // Column8
             // 
             this.Column8.DataPropertyName = "GioiTinh";
@@ -306,22 +240,89 @@
             this.Column1.HeaderText = "Địa chỉ";
             this.Column1.Name = "Column1";
             // 
-            // Form2
+            // btnHuy
+            // 
+            this.btnHuy.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuy.Appearance.Options.UseFont = true;
+            this.btnHuy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
+            this.btnHuy.Location = new System.Drawing.Point(827, 416);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(108, 70);
+            this.btnHuy.TabIndex = 14;
+            this.btnHuy.Text = "Hủy";
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuu.Appearance.Options.UseFont = true;
+            this.btnLuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.btnLuu.Location = new System.Drawing.Point(827, 340);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(108, 70);
+            this.btnLuu.TabIndex = 13;
+            this.btnLuu.Text = "Lưu";
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Appearance.Options.UseFont = true;
+            this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.btnXoa.Location = new System.Drawing.Point(713, 492);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(108, 70);
+            this.btnXoa.TabIndex = 12;
+            this.btnXoa.Text = "Xóa";
+            // 
+            // btnSua
+            // 
+            this.btnSua.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Appearance.Options.UseFont = true;
+            this.btnSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnSua.Location = new System.Drawing.Point(713, 416);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(108, 70);
+            this.btnSua.TabIndex = 11;
+            this.btnSua.Text = "Sửa";
+            // 
+            // btnThem
+            // 
+            this.btnThem.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Appearance.Options.UseFont = true;
+            this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnThem.Location = new System.Drawing.Point(713, 340);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(108, 70);
+            this.btnThem.TabIndex = 10;
+            this.btnThem.Text = "Thêm";
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.Appearance.Options.UseFont = true;
+            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton6.ImageOptions.Image")));
+            this.btnThoat.Location = new System.Drawing.Point(827, 492);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(108, 70);
+            this.btnThoat.TabIndex = 15;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
+            // frmKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(942, 639);
-            this.Controls.Add(this.simpleButton6);
-            this.Controls.Add(this.simpleButton5);
-            this.Controls.Add(this.simpleButton4);
-            this.Controls.Add(this.simpleButton3);
-            this.Controls.Add(this.simpleButton2);
-            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.btnThoat);
+            this.Controls.Add(this.btnHuy);
+            this.Controls.Add(this.btnLuu);
+            this.Controls.Add(this.btnXoa);
+            this.Controls.Add(this.btnSua);
+            this.Controls.Add(this.btnThem);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label1);
-            this.Name = "Form2";
+            this.Name = "frmKhachHang";
             this.Text = "Quản lý khách hàng";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -346,12 +347,12 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton5;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton6;
+        private DevExpress.XtraEditors.SimpleButton btnHuy;
+        private DevExpress.XtraEditors.SimpleButton btnLuu;
+        private DevExpress.XtraEditors.SimpleButton btnXoa;
+        private DevExpress.XtraEditors.SimpleButton btnSua;
+        private DevExpress.XtraEditors.SimpleButton btnThem;
+        private DevExpress.XtraEditors.SimpleButton btnThoat;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;

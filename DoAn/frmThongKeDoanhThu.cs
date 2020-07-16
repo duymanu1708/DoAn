@@ -7,29 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+
 namespace DoAn
 {
-    public partial class frmDonHang : Form
+    public partial class frmThongKeDoanhThu : Form
     {
-        public frmDonHang()
+        public frmThongKeDoanhThu()
         {
             InitializeComponent();
         }
-        DataTable tblKHACHHANG, tblSANPHAM, tblDONHANG, tblCTHD;
 
-        private void simpleButton7_Click(object sender, EventArgs e)
+        private void btnThoat_Click(object sender, EventArgs e)
         {
             TabPage p = (TabPage)this.Parent;
             TabControl tabMain = (TabControl)p.Parent;
             tabMain.TabPages.Remove(p);
-        }
-
-        SqlDataAdapter daKH, daDH, daCTHD;
-        bool capNhat;
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
