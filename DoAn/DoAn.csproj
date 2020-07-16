@@ -37,6 +37,7 @@
     <Reference Include="DevExpress.Printing.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Sparkline.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -56,8 +57,20 @@
     <Compile Include="frmDonHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDonHang.Designer.cs">
+    <Compile Include="frmDonHang.designer.cs">
       <DependentUpon>frmDonHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSanPham.Designer.cs">
+      <DependentUpon>frmSanPham.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTTKH.cs">
       <SubType>Form</SubType>
@@ -79,9 +92,16 @@
     <EmbeddedResource Include="frmDonHang.resx">
       <DependentUpon>frmDonHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSanPham.resx">
+      <DependentUpon>frmSanPham.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTTKH.resx">
       <DependentUpon>frmTTKH.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
