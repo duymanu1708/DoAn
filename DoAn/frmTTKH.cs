@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DoAn
 {
-    public partial class Form2 : Form
+    public partial class frmTTKH : Form
     {
-        public Form2()
+        public frmTTKH()
         {
             InitializeComponent();
         }
