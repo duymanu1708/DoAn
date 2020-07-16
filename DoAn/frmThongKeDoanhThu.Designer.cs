@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThongKeDoanhThu));
             this.dgvTTHD = new System.Windows.Forms.DataGridView();
             this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuongBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTTHD)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,11 +85,22 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Tổng Doanh Thu:";
             // 
+            // btnThoat
+            // 
+            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnThoat.Location = new System.Drawing.Point(218, 203);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(119, 43);
+            this.btnThoat.TabIndex = 7;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
             // frmThongKeDoanhThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(575, 286);
+            this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dgvTTHD);
@@ -107,5 +120,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.SimpleButton btnThoat;
     }
 }

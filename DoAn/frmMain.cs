@@ -60,7 +60,7 @@ namespace DoAn
         {
             frmThongKeDoanhThu f = new frmThongKeDoanhThu();
             TabPage p = new TabPage(f.Text);
-            p.Name = "tabThongKeDoanhThug";
+            p.Name = "tabThongKeDoanhThu";
             f.TopLevel = false;
             p.Controls.Add(f);
             f.Dock = DockStyle.Fill;

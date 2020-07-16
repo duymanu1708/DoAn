@@ -18,6 +18,12 @@ namespace DoAn
         }
         DataTable tblKHACHHANG, tblSANPHAM, tblDONHANG, tblCTHD;
 
+        private void simpleButton7_Click(object sender, EventArgs e)
+        {
+            TabPage p = (TabPage)this.Parent;
+            TabControl tabMain = (TabControl)p.Parent;
+            tabMain.TabPages.Remove(p);
+        }
 
         SqlDataAdapter daKH, daDH, daCTHD;
         bool capNhat;
