@@ -122,6 +122,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLNHASACHDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ThongKeDoanhThu.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThongKeDoanhThu.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="frmRP.resx">
       <DependentUpon>frmRP.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,6 +160,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ThongKeDoanhThu.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ThongKeDoanhThu.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="DataSetHD.xsc">
       <DependentUpon>DataSetHD.xsd</DependentUpon>
     </None>
