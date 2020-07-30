@@ -17,12 +17,7 @@ namespace DoAn
             InitializeComponent();
         }
 
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            TabPage p = (TabPage)this.Parent;
-            TabControl tabMain = (TabControl)p.Parent;
-            tabMain.TabPages.Remove(p);
-        }
+        
 
         private void frmThongKeDoanhThu_Load(object sender, EventArgs e)
         {
@@ -32,6 +27,13 @@ namespace DoAn
             ThongKeDoanhThu RP = new ThongKeDoanhThu();
             RP.SetDataSource(dt);
             crystalReportViewer1.ReportSource = RP;
+        }
+
+        private void btnThoat_Click_1(object sender, EventArgs e)
+        {
+            TabPage p = (TabPage)this.Parent;
+            TabControl tabMain = (TabControl)p.Parent;
+            tabMain.TabPages.Remove(p);
         }
     }
 }
