@@ -79,6 +79,7 @@
             this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
             this.btnInHD = new DevExpress.XtraEditors.SimpleButton();
             this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grTTKH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSoLuong)).BeginInit();
@@ -274,6 +275,7 @@
             // grTTKH
             // 
             this.grTTKH.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.grTTKH.Controls.Add(this.comboBox1);
             this.grTTKH.Controls.Add(this.label11);
             this.grTTKH.Controls.Add(this.txtDonGia);
             this.grTTKH.Controls.Add(this.numSoLuong);
@@ -536,6 +538,14 @@
             this.btnThoat.Text = "Thoát";
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(519, 137);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 19;
+            // 
             // frmDonHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -617,6 +627,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 
