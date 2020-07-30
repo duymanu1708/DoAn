@@ -33,16 +33,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Sparkline.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,6 +61,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classKetNoi.cs" />
+    <Compile Include="FrmRP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRP.Designer.cs">
+      <DependentUpon>FrmRP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InHD.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InHD.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSetHD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetHD.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmDonHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,14 +112,23 @@
     <Compile Include="Modules.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="reportHD.cs">
-      <DependentUpon>reportHD.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="reportHD.Designer.cs">
+    <Compile Include="QLNHASACHDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>reportHD.xsd</DependentUpon>
+      <DependentUpon>QLNHASACHDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QLNHASACHDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLNHASACHDataSet1.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FrmRP.resx">
+      <DependentUpon>FrmRP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InHD.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InHD.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDonHang.resx">
       <DependentUpon>frmDonHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +154,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="DataSetHD.xsc">
+      <DependentUpon>DataSetHD.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetHD.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetHD.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetHD.xss">
+      <DependentUpon>DataSetHD.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -129,20 +174,34 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="reportHD.xsc">
-      <DependentUpon>reportHD.xsd</DependentUpon>
+    <None Include="QLNHASACHDataSet.xsc">
+      <DependentUpon>QLNHASACHDataSet.xsd</DependentUpon>
     </None>
-    <None Include="reportHD.xsd">
-      <SubType>Designer</SubType>
+    <None Include="QLNHASACHDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>reportHD.Designer.cs</LastGenOutput>
+      <LastGenOutput>QLNHASACHDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
-    <None Include="reportHD.xss">
-      <DependentUpon>reportHD.xsd</DependentUpon>
+    <None Include="QLNHASACHDataSet.xss">
+      <DependentUpon>QLNHASACHDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLNHASACHDataSet1.xsc">
+      <DependentUpon>QLNHASACHDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QLNHASACHDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLNHASACHDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLNHASACHDataSet1.xss">
+      <DependentUpon>QLNHASACHDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

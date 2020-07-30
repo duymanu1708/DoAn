@@ -12,7 +12,6 @@ namespace DoAn
 {
     public partial class frmDonHang : Form
     {
-        BindingManagerBase DSHD;
         public frmDonHang()
         {
             InitializeComponent();
@@ -25,29 +24,31 @@ namespace DoAn
             TabControl tabMain = (TabControl)p.Parent;
             tabMain.TabPages.Remove(p);
         }
-
-        private void btnThem_Click(object sender, EventArgs e)
+        BindingManagerBase DSHD;
+        private void btnInHD_Click(object sender, EventArgs e)
         {
-
+            FrmRP f = new FrmRP();
+            f.WindowState = FormWindowState.Maximized;
+            f.Show();
         }
-
         private void frmDonHang_Load(object sender, EventArgs e)
         {
             tblKHACHHANG = new DataTable();
             daKH = new SqlDataAdapter("select * from KHACHHANG", Modules.cnnStr);
             tblSANPHAM = new DataTable();
-            daSP = new SqlDataAdapter("select * from SANPHAM",Modules.cnnStr);
+            daSP = new SqlDataAdapter("select * from SANPHAM", Modules.cnnStr);
             tblDONHANG = new DataTable();
-            daDH = new SqlDataAdapter("select * from DONHANG",Modules.cnnStr);
+            daDH = new SqlDataAdapter("select * from DONHANG", Modules.cnnStr);
             tblCTHD = new DataTable();
-            daCTHD = new SqlDataAdapter("select * from CTHD",Modules.cnnStr);
+            daCTHD = new SqlDataAdapter("select * from CTHD", Modules.cnnStr);
             try
             {
                 daDH.Fill(tblDONHANG);
                 daKH.Fill(tblKHACHHANG);
                 daCTHD.Fill(tblCTHD);
                 daSP.Fill(tblSANPHAM);
-            }catch(SqlException ex)
+            }
+            catch (SqlException ex)
             {
                 MessageBox.Show(ex.ToString());
             }
@@ -59,15 +60,15 @@ namespace DoAn
             //txtTenSP.DataBindings.Add("text", tblDONHANG, "TenSP", true);
             //txtThanhTien.DataBindings.Add("float", tblDONHANG, "Tong", true);
             //numSoLuong.DataBindings.Add("value", tblDONHANG, "SoLuong", true);
-            dtNgayMua.Value= DateTime.Today;
+            dtNgayMua.Value = DateTime.Today;
             DSHD = this.BindingContext[tblDONHANG];
 
         }
         private void loadCTHD()
         {
             DataSet ds = new DataSet();
-            ds.Tables.AddRange(new DataTable[] {tblDONHANG, tblKHACHHANG });
-            DataRelation qh = new DataRelation("FK_KHACHHANG_DONHANG", tblDONHANG.Columns["MaKH"],tblKHACHHANG.Columns["MaKH"] );
+            ds.Tables.AddRange(new DataTable[] { tblDONHANG, tblKHACHHANG });
+            DataRelation qh = new DataRelation("FK_KHACHHANG_DONHANG", tblDONHANG.Columns["MaKH"], tblKHACHHANG.Columns["MaKH"]);
             ds.Relations.Add(qh);
             DataColumn cTenKH = new DataColumn("TenKH", Type.GetType("System.String"), "Parent(FK_KHACHHANG_DONHANG).TenKH");
             tblDONHANG.Columns.Add(cTenKH);
@@ -96,8 +97,7 @@ namespace DoAn
             foreach (DataGridViewRow r in dgvTTHD.Rows)
                 r.Cells[0].Value = r.Index + 1;
         }
-
-        SqlDataAdapter daKH, daDH, daCTHD, daSP;
+        SqlDataAdapter daSP,daKH, daDH, daCTHD;
         bool capNhat;
     }
 }
