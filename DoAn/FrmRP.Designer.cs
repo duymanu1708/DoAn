@@ -1,6 +1,6 @@
 ﻿namespace DoAn
 {
-    partial class FrmRP
+    partial class frmRP
     {
         /// <summary>
         /// Required designer variable.

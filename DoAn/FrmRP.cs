@@ -11,9 +11,9 @@ using System.Data.SqlClient;
 
 namespace DoAn
 {
-    public partial class FrmRP : Form
+    public partial class frmRP : Form
     {
-        public FrmRP()
+        public frmRP()
         {
             InitializeComponent();
         }

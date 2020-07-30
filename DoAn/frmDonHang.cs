@@ -27,14 +27,14 @@ namespace DoAn
         BindingManagerBase DSHD;
         private void btnInHD_Click(object sender, EventArgs e)
         {
-            FrmRP f = new FrmRP();
+            frmRP f = new frmRP();
             f.WindowState = FormWindowState.Maximized;
             f.Show();
         }
         private void frmDonHang_Load(object sender, EventArgs e)
         {
             tblKHACHHANG = new DataTable();
-            daKH = new SqlDataAdapter("select * from KHACHHANG", Modules.cnnStr);
+            daDH = new SqlDataAdapter("select * from KHACHHANG", Modules.cnnStr);
             tblSANPHAM = new DataTable();
             daSP = new SqlDataAdapter("select * from SANPHAM", Modules.cnnStr);
             tblDONHANG = new DataTable();
@@ -98,6 +98,66 @@ namespace DoAn
                 r.Cells[0].Value = r.Index + 1;
         }
         SqlDataAdapter daSP,daKH, daDH, daCTHD;
-        bool capNhat;
+        bool capnhat = false;
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            DSHD.AddNew();
+            capnhat = true;
+            enableButton();
+        }
+        private void enableButton()
+        {
+            btnThem.Enabled = !capnhat;
+            btnXoa.Enabled = !capnhat;
+            btnSua.Enabled = !capnhat;
+            btnInHD.Enabled = !capnhat;
+            btnLuu.Enabled = capnhat;
+            btnHuy.Enabled = capnhat;
+        }
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DSHD.EndCurrentEdit();
+                daKH.Update(tblDONHANG);
+                tblDONHANG.AcceptChanges();
+                capnhat = false;
+                enableButton();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            DSHD.CancelCurrentEdit();
+            tblDONHANG.RejectChanges();
+            capnhat = false;
+            enableButton();
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DSHD.RemoveAt(DSHD.Position);
+                daDH.Update(tblDONHANG);
+                tblDONHANG.AcceptChanges();
+            }
+            catch (SqlException ex)
+            {
+                tblDONHANG.RejectChanges();
+                MessageBox.Show("Xóa thất bại!");
+            }
+
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            capnhat = true;
+            enableButton();
+        }
     }
 }

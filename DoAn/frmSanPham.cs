@@ -33,9 +33,12 @@ namespace DoAn
         {
             tblSanPham = new DataTable();
             daSanPham = new SqlDataAdapter("Select * from SANPHAM", Modules.cnnStr);
+            tblNSX = new DataTable();
+            daNSX = new SqlDataAdapter("select * from NSX", Modules.cnnStr);
             try
             {
-                daSanPham.Fill(tblSanPham);       
+                daSanPham.Fill(tblSanPham);
+                daNSX.Fill(tblNSX);     
             }
             catch (SqlException ex)
             {
