@@ -54,38 +54,39 @@ namespace DoAn
             loadCTHD();
             var cmb = new SqlCommandBuilder(daDH);
             txtHoTen.DataBindings.Add("text", tblDONHANG, "TenKH", true);
-            txtDonGia.DataBindings.Add("float", tblDONHANG, "DonGia", true);
-            txtMaKH.DataBindings.Add("int", tblDONHANG, "MaKH", true);
-            txtTenSP.DataBindings.Add("text", tblDONHANG, "TenSP", true);
-            txtThanhTien.DataBindings.Add("float", tblDONHANG, "Tong", true);
-            numSoLuong.DataBindings.Add("numberic", tblDONHANG, "SoLuong", true);
-            dtNgayMua.DataBindings.Add("datetime", tblDONHANG, "NgayLap", true);
+            //txtDonGia.DataBindings.Add("float", tblDONHANG, "DonGia", true);
+            txtMaKH.DataBindings.Add("text", tblDONHANG, "MaKH", true);
+            //txtTenSP.DataBindings.Add("text", tblDONHANG, "TenSP", true);
+            //txtThanhTien.DataBindings.Add("float", tblDONHANG, "Tong", true);
+            //numSoLuong.DataBindings.Add("value", tblDONHANG, "SoLuong", true);
+            dtNgayMua.Value= DateTime.Today;
+            DSHD = this.BindingContext[tblDONHANG];
 
         }
         private void loadCTHD()
         {
             DataSet ds = new DataSet();
-            ds.Tables.AddRange(new DataTable[] { tblKHACHHANG, tblDONHANG });
-            DataRelation qh = new DataRelation("FK_KHACHHANG_DONHANG", tblKHACHHANG.Columns["MaKH"], tblDONHANG.Columns["MaKH"]);
+            ds.Tables.AddRange(new DataTable[] {tblDONHANG, tblKHACHHANG });
+            DataRelation qh = new DataRelation("FK_KHACHHANG_DONHANG", tblDONHANG.Columns["MaKH"],tblKHACHHANG.Columns["MaKH"] );
             ds.Relations.Add(qh);
             DataColumn cTenKH = new DataColumn("TenKH", Type.GetType("System.String"), "Parent(FK_KHACHHANG_DONHANG).TenKH");
             tblDONHANG.Columns.Add(cTenKH);
-            DataSet ds1 = new DataSet();
-            ds1.Tables.AddRange(new DataTable[] {  tblCTHD, tblDONHANG });
-            DataRelation qh1 = new DataRelation("FRK_DONHANG_CTHD",  tblKHACHHANG.Columns["MaHD"], tblDONHANG.Columns["MaHD"]);
-            ds1.Relations.Add(qh1);
-            DataColumn cSoLuong = new DataColumn("SoLuong", Type.GetType("System.String"), "Parent(FRK_DONHANG_CTHD).SoLuong");
-            tblDONHANG.Columns.Add(cSoLuong);
-            DataColumn cTong = new DataColumn("Tong", Type.GetType("System.String"), "Parent(FRK_DONHANG_CTHD).Tong");
-            tblDONHANG.Columns.Add(cTong);
-            DataSet ds2 = new DataSet();
-            ds2.Tables.AddRange(new DataTable[] { tblSANPHAM, tblDONHANG });
-            DataRelation qh2 = new DataRelation("FRK_DONHANG_SANPHAM", tblKHACHHANG.Columns["MaSP"], tblDONHANG.Columns["MaSP"]);
-            ds2.Relations.Add(qh2);
-            DataColumn cTenSP = new DataColumn("TenSP", Type.GetType("System.String"), "Parent(FRK_DONHANG_SANPHAM).TenSP");
-            tblDONHANG.Columns.Add(cTenSP);
-            DataColumn cDonGia = new DataColumn("DonGIa", Type.GetType("System.String"), "Parent(FRK_DONHANG_SANPHAM).DonGIa");
-            tblDONHANG.Columns.Add(cTenSP);
+            //DataSet ds1 = new DataSet();
+            //ds1.Tables.AddRange(new DataTable[] { tblCTHD, tblDONHANG });
+            //DataRelation qh1 = new DataRelation("FRK_DONHANG_CTHD", tblKHACHHANG.Columns["MaHD"], tblDONHANG.Columns["MaHD"]);
+            //ds1.Relations.Add(qh1);
+            //DataColumn cSoLuong = new DataColumn("SoLuong", Type.GetType("System.String"), "Parent(FRK_DONHANG_CTHD).SoLuong");
+            //tblDONHANG.Columns.Add(cSoLuong);
+            //DataColumn cTong = new DataColumn("Tong", Type.GetType("System.String"), "Parent(FRK_DONHANG_CTHD).Tong");
+            //tblDONHANG.Columns.Add(cTong);
+            //DataSet ds2 = new DataSet();
+            //ds2.Tables.AddRange(new DataTable[] { tblSANPHAM, tblDONHANG });
+            //DataRelation qh2 = new DataRelation("FRK_DONHANG_SANPHAM", tblKHACHHANG.Columns["MaSP"], tblDONHANG.Columns["MaSP"]);
+            //ds2.Relations.Add(qh2);
+            //DataColumn cTenSP = new DataColumn("TenSP", Type.GetType("System.String"), "Parent(FRK_DONHANG_SANPHAM).TenSP");
+            //tblDONHANG.Columns.Add(cTenSP);
+            //DataColumn cDonGia = new DataColumn("DonGIa", Type.GetType("System.String"), "Parent(FRK_DONHANG_SANPHAM).DonGIa");
+            //tblDONHANG.Columns.Add(cDonGia);
             dgvTTHD.AutoGenerateColumns = false;
             dgvTTHD.DataSource = tblDONHANG;
         }
