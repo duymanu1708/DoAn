@@ -50,7 +50,6 @@ GO
 CREATE TABLE DONHANG(
 	MaHD varchar(10) NOT NULL,
 	MaKH varchar(10) NULL,
-	MaNV varchar(10) NULL,
 	NgayLap datetime NULL,
  CONSTRAINT PK_DonHang PRIMARY KEY (MaHD)
 )
@@ -123,10 +122,10 @@ insert into KHACHHANG values('KH0003', N'Phạm Thế Phong',1,'01265123744',N'P
 
 
 --Insert table DONHANG
-insert into DONHANG values('HD0001','KH0001','NV0001','5/9/2016')
-insert into DONHANG values('HD0002','KH0002','NV0001','10/5/2017')
-insert into DONHANG values('HD0003','KH0002','NV0003','8/4/2017')
-insert into DONHANG values('HD0004','KH0003','NV0003','2/1/2017')
+insert into DONHANG values('HD0001','KH0001','5/9/2016')
+insert into DONHANG values('HD0002','KH0002','10/5/2017')
+insert into DONHANG values('HD0003','KH0002','8/4/2017')
+insert into DONHANG values('HD0004','KH0003','2/1/2017')
 
 --Insert table CTHD
 insert into CTHD values(1,'HD0001','SP0001', 2 , 30000)

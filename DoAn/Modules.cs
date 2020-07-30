@@ -9,7 +9,7 @@ namespace DoAn
 {
     class Modules
     {
-        public static string cnnStr = "Data Source=.;Initial Catalog=QLNHASCH;Integrated Security=True";
+        public static string cnnStr = "Data Source=.;Initial Catalog=QLNHASACH;Integrated Security=True";
         public static SqlConnection cnn = new SqlConnection(cnnStr);
     }
 }
