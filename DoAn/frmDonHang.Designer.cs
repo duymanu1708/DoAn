@@ -52,6 +52,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.grTTKH = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtDonGia = new System.Windows.Forms.TextBox();
             this.numSoLuong = new System.Windows.Forms.NumericUpDown();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -64,6 +66,12 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtHoTen = new System.Windows.Forms.TextBox();
             this.dgvTTHD = new System.Windows.Forms.DataGridView();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.btnSua = new DevExpress.XtraEditors.SimpleButton();
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
@@ -71,14 +79,6 @@
             this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
             this.btnInHD = new DevExpress.XtraEditors.SimpleButton();
             this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtDonGia = new System.Windows.Forms.TextBox();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grTTKH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSoLuong)).BeginInit();
@@ -296,6 +296,22 @@
             this.grTTKH.TabStop = false;
             this.grTTKH.Text = "Thông tin khách hàng";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(307, 61);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(67, 16);
+            this.label11.TabIndex = 18;
+            this.label11.Text = "Đơn Giá:";
+            // 
+            // txtDonGia
+            // 
+            this.txtDonGia.Location = new System.Drawing.Point(404, 56);
+            this.txtDonGia.Name = "txtDonGia";
+            this.txtDonGia.Size = new System.Drawing.Size(180, 22);
+            this.txtDonGia.TabIndex = 17;
+            // 
             // numSoLuong
             // 
             this.numSoLuong.Location = new System.Drawing.Point(404, 87);
@@ -348,7 +364,7 @@
             // 
             this.dtNgayMua.CustomFormat = "dd/MM/yyyy";
             this.dtNgayMua.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtNgayMua.Location = new System.Drawing.Point(404, 23);
+            this.dtNgayMua.Location = new System.Drawing.Point(404, 26);
             this.dtNgayMua.Name = "dtNgayMua";
             this.dtNgayMua.Size = new System.Drawing.Size(180, 22);
             this.dtNgayMua.TabIndex = 7;
@@ -400,6 +416,48 @@
             this.dgvTTHD.Size = new System.Drawing.Size(852, 135);
             this.dgvTTHD.TabIndex = 3;
             this.dgvTTHD.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvTTHD_DataBindingComplete);
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "MaKH";
+            this.Column8.HeaderText = "Mã KH";
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 80;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "TenKH";
+            this.Column9.HeaderText = "Họ và tên";
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 200;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "NgayLap";
+            this.Column10.HeaderText = "Ngày mua";
+            this.Column10.Name = "Column10";
+            // 
+            // Column11
+            // 
+            this.Column11.DataPropertyName = "TenSP";
+            this.Column11.HeaderText = "Tên Sản Phẩm";
+            this.Column11.Name = "Column11";
+            this.Column11.Width = 200;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.DataPropertyName = "SoLuong";
+            this.SoLuong.HeaderText = "Số Lượng";
+            this.SoLuong.Name = "SoLuong";
+            this.SoLuong.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Column15
+            // 
+            this.Column15.DataPropertyName = "Tong";
+            this.Column15.HeaderText = "Thành Tiền:";
+            this.Column15.Name = "Column15";
+            this.Column15.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column15.Width = 150;
             // 
             // btnThem
             // 
@@ -477,64 +535,6 @@
             this.btnThoat.TabIndex = 10;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(307, 61);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(67, 16);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "Đơn Giá:";
-            // 
-            // txtDonGia
-            // 
-            this.txtDonGia.Location = new System.Drawing.Point(404, 56);
-            this.txtDonGia.Name = "txtDonGia";
-            this.txtDonGia.Size = new System.Drawing.Size(180, 22);
-            this.txtDonGia.TabIndex = 17;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "MaKH";
-            this.Column8.HeaderText = "Mã KH";
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 80;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "TenKH";
-            this.Column9.HeaderText = "Họ và tên";
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 200;
-            // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "NgayLap";
-            this.Column10.HeaderText = "Ngày mua";
-            this.Column10.Name = "Column10";
-            // 
-            // Column11
-            // 
-            this.Column11.DataPropertyName = "TenSP";
-            this.Column11.HeaderText = "Tên Sản Phẩm";
-            this.Column11.Name = "Column11";
-            this.Column11.Width = 200;
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.DataPropertyName = "SoLuong";
-            this.SoLuong.HeaderText = "Số Lượng";
-            this.SoLuong.Name = "SoLuong";
-            this.SoLuong.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Column15
-            // 
-            this.Column15.DataPropertyName = "Tong";
-            this.Column15.HeaderText = "Thành Tiền:";
-            this.Column15.Name = "Column15";
-            this.Column15.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column15.Width = 150;
             // 
             // frmDonHang
             // 
