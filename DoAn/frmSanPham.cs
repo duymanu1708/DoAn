@@ -45,7 +45,6 @@ namespace DoAn
                 MessageBox.Show(ex.ToString());
             }
             var cmb = new SqlCommandBuilder(daSanPham);
-            loaddgvSP();
             loadNSX();
             txtTenSP.DataBindings.Add("text", tblSanPham, "TenSP", true);
             txtTenNSX.DataBindings.Add("text", tblSanPham, "TenNSX", true);
@@ -76,11 +75,7 @@ namespace DoAn
             btnHuy.Enabled = capnhat;
         }
        
-        private void loaddgvSP()
-        {
-            dgvSP.AutoGenerateColumns = false;
-            dgvSP.DataSource = tblSanPham;
-        }
+ 
 
         private void btnThem_Click(object sender, EventArgs e)
         {
