@@ -34,8 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtMaSP = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cboNSX = new System.Windows.Forms.ComboBox();
-            this.cboTenSP = new System.Windows.Forms.ComboBox();
             this.numSoLuong = new System.Windows.Forms.NumericUpDown();
             this.label14 = new System.Windows.Forms.Label();
             this.txtDonGia = new System.Windows.Forms.TextBox();
@@ -48,14 +46,16 @@
             this.btnSua = new DevExpress.XtraEditors.SimpleButton();
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.dgvSP = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenNSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
+            this.txtTenNSX = new System.Windows.Forms.TextBox();
+            this.txtTenSP = new System.Windows.Forms.TextBox();
             this.grTTS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSoLuong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSP)).BeginInit();
@@ -64,12 +64,12 @@
             // grTTS
             // 
             this.grTTS.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.grTTS.Controls.Add(this.txtTenSP);
+            this.grTTS.Controls.Add(this.txtTenNSX);
             this.grTTS.Controls.Add(this.txtDonVi);
             this.grTTS.Controls.Add(this.label2);
             this.grTTS.Controls.Add(this.txtMaSP);
             this.grTTS.Controls.Add(this.label1);
-            this.grTTS.Controls.Add(this.cboNSX);
-            this.grTTS.Controls.Add(this.cboTenSP);
             this.grTTS.Controls.Add(this.numSoLuong);
             this.grTTS.Controls.Add(this.label14);
             this.grTTS.Controls.Add(this.txtDonGia);
@@ -115,22 +115,6 @@
             this.label1.Size = new System.Drawing.Size(57, 16);
             this.label1.TabIndex = 13;
             this.label1.Text = "Mã SP:";
-            // 
-            // cboNSX
-            // 
-            this.cboNSX.FormattingEnabled = true;
-            this.cboNSX.Location = new System.Drawing.Point(125, 64);
-            this.cboNSX.Name = "cboNSX";
-            this.cboNSX.Size = new System.Drawing.Size(166, 24);
-            this.cboNSX.TabIndex = 12;
-            // 
-            // cboTenSP
-            // 
-            this.cboTenSP.FormattingEnabled = true;
-            this.cboTenSP.Location = new System.Drawing.Point(125, 21);
-            this.cboTenSP.Name = "cboTenSP";
-            this.cboTenSP.Size = new System.Drawing.Size(166, 24);
-            this.cboTenSP.TabIndex = 11;
             // 
             // numSoLuong
             // 
@@ -257,29 +241,6 @@
             this.dgvSP.Size = new System.Drawing.Size(852, 135);
             this.dgvSP.TabIndex = 13;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(375, 9);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(359, 39);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "QUẢN LÍ SẢN PHẨM";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Appearance.Options.UseFont = true;
-            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
-            this.btnThoat.Location = new System.Drawing.Point(978, 235);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(108, 70);
-            this.btnThoat.TabIndex = 19;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
             // MaSP
             // 
             this.MaSP.DataPropertyName = "MaSP";
@@ -318,6 +279,43 @@
             this.DonVi.HeaderText = "Đơn Vị";
             this.DonVi.Name = "DonVi";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(375, 9);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(359, 39);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "QUẢN LÍ SẢN PHẨM";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.Appearance.Options.UseFont = true;
+            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
+            this.btnThoat.Location = new System.Drawing.Point(978, 235);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(108, 70);
+            this.btnThoat.TabIndex = 19;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
+            // txtTenNSX
+            // 
+            this.txtTenNSX.Location = new System.Drawing.Point(125, 65);
+            this.txtTenNSX.Name = "txtTenNSX";
+            this.txtTenNSX.Size = new System.Drawing.Size(166, 22);
+            this.txtTenNSX.TabIndex = 17;
+            // 
+            // txtTenSP
+            // 
+            this.txtTenSP.Location = new System.Drawing.Point(125, 27);
+            this.txtTenSP.Name = "txtTenSP";
+            this.txtTenSP.Size = new System.Drawing.Size(166, 22);
+            this.txtTenSP.TabIndex = 18;
+            // 
             // frmSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -347,8 +345,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox grTTS;
-        private System.Windows.Forms.ComboBox cboNSX;
-        private System.Windows.Forms.ComboBox cboTenSP;
         private System.Windows.Forms.NumericUpDown numSoLuong;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtDonGia;
@@ -373,5 +369,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonVi;
+        private System.Windows.Forms.TextBox txtTenSP;
+        private System.Windows.Forms.TextBox txtTenNSX;
     }
 }

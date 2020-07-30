@@ -43,10 +43,9 @@ namespace DoAn
             }
             var cmb = new SqlCommandBuilder(daSanPham);
             loaddgvSP();
-            LoadCboTenSP();
             loadNSX();
-            cboTenSP.DataBindings.Add("SelectedValue", tblSanPham, "TenSP", true);
-            cboNSX.DataBindings.Add("SelectedValue", tblSanPham, "MaNSX", true);
+            txtTenSP.DataBindings.Add("text", tblSanPham, "TenSP", true);
+            txtTenNSX.DataBindings.Add("text", tblSanPham, "TenNSX", true);
             txtMaSP.DataBindings.Add("text", tblSanPham, "MaSP", true);
             txtDonGia.DataBindings.Add("text", tblSanPham, "DonGia", true);
             txtDonVi.DataBindings.Add("text", tblSanPham, "DonVi", true);
@@ -57,11 +56,11 @@ namespace DoAn
         private void loadNSX()
         {
             DataSet ds = new DataSet();
-            ds.Tables.AddRange(new DataTable[] { tblNSX, tblSanPham });
-            DataRelation qh = new DataRelation("FRK_NSX_SANPHAM", tblNSX.Columns["MaNSX"], tblSanPham.Columns["MaNSX"]);
+            ds.Tables.AddRange(new DataTable[] { tblSanPham,tblNSX  });
+            DataRelation qh = new DataRelation("FRK_NSX_SANPHAM", tblSanPham.Columns["MaNSX"],tblNSX.Columns["MaNSX"]);
             ds.Relations.Add(qh);
-            DataColumn cMaNSX = new DataColumn("MaNSX", Type.GetType("System.String"), "Parent(FRK_NSX_SANPHAM).MaNSX");
-            tblSanPham.Columns.Add(cMaNSX);
+            DataColumn cTenNSX = new DataColumn("TenNSX", Type.GetType("System.String"), "Parent(FRK_NSX_SANPHAM).TenNSX");
+            tblSanPham.Columns.Add(cTenNSX);
             dgvSP.AutoGenerateColumns = false;
             dgvSP.DataSource = tblSanPham;
         }
@@ -73,15 +72,7 @@ namespace DoAn
             btnLuu.Enabled = capnhat;
             btnHuy.Enabled = capnhat;
         }
-        private void LoadCboTenSP()
-        {
-            cboTenSP.DataSource = tblSanPham;
-            cboTenSP.DisplayMember = "TenSP";
-            cboTenSP.ValueMember = "MaSP";
-            cboNSX.DataSource = tblSanPham;
-            cboNSX.DisplayMember = "TenNSX";
-            cboNSX.ValueMember = "MaNSX";
-        }
+       
         private void loaddgvSP()
         {
             dgvSP.AutoGenerateColumns = false;
