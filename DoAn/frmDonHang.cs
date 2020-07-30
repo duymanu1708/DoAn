@@ -17,7 +17,8 @@ namespace DoAn
             InitializeComponent();
         }
         DataTable tblKHACHHANG, tblSANPHAM, tblDONHANG, tblCTHD;
-
+        SqlDataAdapter daSP, daKH, daDH, daCTHD;
+        bool capnhat = false;
         private void btnThoat_Click(object sender, EventArgs e)
         {
             TabPage p = (TabPage)this.Parent;
@@ -52,44 +53,45 @@ namespace DoAn
             {
                 MessageBox.Show(ex.ToString());
             }
-            loadCTHD();
+            //loadCTHD();
             var cmb = new SqlCommandBuilder(daDH);
-            txtHoTen.DataBindings.Add("text", tblDONHANG, "TenKH", true);
-            //txtDonGia.DataBindings.Add("float", tblDONHANG, "DonGia", true);
-            txtMaKH.DataBindings.Add("text", tblDONHANG, "MaKH", true);
-            //txtTenSP.DataBindings.Add("text", tblDONHANG, "TenSP", true);
-            //txtThanhTien.DataBindings.Add("float", tblDONHANG, "Tong", true);
-            //numSoLuong.DataBindings.Add("value", tblDONHANG, "SoLuong", true);
-            dtNgayMua.Value = DateTime.Today;
-            DSHD = this.BindingContext[tblDONHANG];
+            //txtHoTen.DataBindings.Add("text", tblCTHD, "TenKH", true);
+            txtDonGia.DataBindings.Add("text", tblCTHD, "DonGia", true);
+            //txtMaKH.DataBindings.Add("text", tblCTHD, "MaKH", true);
+            //txtTenSP.DataBindings.Add("text", tblCTHD, "TenSP", true);
+            txtThanhTien.DataBindings.Add("text", tblCTHD, "Tong", true);
+            numSoLuong.DataBindings.Add("Value", tblCTHD, "SoLuong", true);
+            //dtNgayMua.Value = DateTime.Today;
+            DSHD = this.BindingContext[tblCTHD];
+            enableButton();
 
         }
         private void loadCTHD()
         {
             DataSet ds = new DataSet();
             ds.Tables.AddRange(new DataTable[] { tblDONHANG, tblKHACHHANG });
-            DataRelation qh = new DataRelation("FK_KHACHHANG_DONHANG", tblDONHANG.Columns["MaKH"], tblKHACHHANG.Columns["MaKH"]);
+            DataRelation qh = new DataRelation("FK_KHACHHANG_DONHANG", tblKHACHHANG.Columns["MaKH"], tblDONHANG.Columns["MaKH"]);
             ds.Relations.Add(qh);
             DataColumn cTenKH = new DataColumn("TenKH", Type.GetType("System.String"), "Parent(FK_KHACHHANG_DONHANG).TenKH");
             tblDONHANG.Columns.Add(cTenKH);
-            //DataSet ds1 = new DataSet();
-            //ds1.Tables.AddRange(new DataTable[] { tblCTHD, tblDONHANG });
-            //DataRelation qh1 = new DataRelation("FRK_DONHANG_CTHD", tblKHACHHANG.Columns["MaHD"], tblDONHANG.Columns["MaHD"]);
-            //ds1.Relations.Add(qh1);
-            //DataColumn cSoLuong = new DataColumn("SoLuong", Type.GetType("System.String"), "Parent(FRK_DONHANG_CTHD).SoLuong");
-            //tblDONHANG.Columns.Add(cSoLuong);
-            //DataColumn cTong = new DataColumn("Tong", Type.GetType("System.String"), "Parent(FRK_DONHANG_CTHD).Tong");
-            //tblDONHANG.Columns.Add(cTong);
-            //DataSet ds2 = new DataSet();
-            //ds2.Tables.AddRange(new DataTable[] { tblSANPHAM, tblDONHANG });
-            //DataRelation qh2 = new DataRelation("FRK_DONHANG_SANPHAM", tblKHACHHANG.Columns["MaSP"], tblDONHANG.Columns["MaSP"]);
-            //ds2.Relations.Add(qh2);
-            //DataColumn cTenSP = new DataColumn("TenSP", Type.GetType("System.String"), "Parent(FRK_DONHANG_SANPHAM).TenSP");
-            //tblDONHANG.Columns.Add(cTenSP);
-            //DataColumn cDonGia = new DataColumn("DonGIa", Type.GetType("System.String"), "Parent(FRK_DONHANG_SANPHAM).DonGIa");
-            //tblDONHANG.Columns.Add(cDonGia);
+
+            DataSet ds1 = new DataSet();
+            ds1.Tables.AddRange(new DataTable[] { tblCTHD, tblDONHANG });
+            DataRelation qh1 = new DataRelation("FRK_DONHANG_CTHD", tblDONHANG.Columns["MaHD"],tblCTHD.Columns["MaHD"]);
+            ds1.Relations.Add(qh1);
+            DataColumn cTenKhachHang = new DataColumn("TenKH", Type.GetType("System.String"), "Parent(FRK_DONHANG_CTHD).TenKH");
+            DataColumn cMaKH = new DataColumn("MaKH", Type.GetType("System.String"), "Parent(FRK_DONHANG_CTHD).MaKH");
+            tblCTHD.Columns.Add(cTenKhachHang);
+            tblCTHD.Columns.Add(cMaKH);
+
+            DataSet ds2 = new DataSet();
+            ds2.Tables.AddRange(new DataTable[] { tblCTHD, tblSANPHAM });
+            DataRelation qh2 = new DataRelation("FRK_CTHD_SANPHAM", tblSANPHAM.Columns["MaSP"], tblCTHD.Columns["MaSP"]);
+            ds2.Relations.Add(qh2);
+            DataColumn cTenSP = new DataColumn("TenSP", Type.GetType("System.String"), "Parent(FRK_DONHANG_SANPHAM).TenSP");
+            tblCTHD.Columns.Add(cTenSP);
             dgvTTHD.AutoGenerateColumns = false;
-            dgvTTHD.DataSource = tblDONHANG;
+            dgvTTHD.DataSource = tblCTHD;
         }
 
         private void dgvTTHD_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -97,14 +99,7 @@ namespace DoAn
             foreach (DataGridViewRow r in dgvTTHD.Rows)
                 r.Cells[0].Value = r.Index + 1;
         }
-        SqlDataAdapter daSP,daKH, daDH, daCTHD;
-        bool capnhat = false;
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            DSHD.AddNew();
-            capnhat = true;
-            enableButton();
-        }
+        
         private void enableButton()
         {
             btnThem.Enabled = !capnhat;
@@ -114,6 +109,13 @@ namespace DoAn
             btnLuu.Enabled = capnhat;
             btnHuy.Enabled = capnhat;
         }
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            DSHD.AddNew();
+            capnhat = true;
+            enableButton();
+        }
+        
         private void btnLuu_Click(object sender, EventArgs e)
         {
             try

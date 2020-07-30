@@ -60,7 +60,7 @@ namespace DoAn
         {
             DataSet ds = new DataSet();
             ds.Tables.AddRange(new DataTable[] { tblSanPham,tblNSX  });
-            DataRelation qh = new DataRelation("FRK_NSX_SANPHAM", tblSanPham.Columns["MaNSX"],tblNSX.Columns["MaNSX"]);
+            DataRelation qh = new DataRelation("FRK_NSX_SANPHAM", tblNSX.Columns["MaNSX"], tblSanPham.Columns["MaNSX"]);
             ds.Relations.Add(qh);
             DataColumn cTenNSX = new DataColumn("TenNSX", Type.GetType("System.String"), "Parent(FRK_NSX_SANPHAM).TenNSX");
             tblSanPham.Columns.Add(cTenNSX);
