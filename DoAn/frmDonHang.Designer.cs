@@ -364,7 +364,7 @@
             // 
             this.dtNgayMua.CustomFormat = "dd/MM/yyyy";
             this.dtNgayMua.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtNgayMua.Location = new System.Drawing.Point(404, 26);
+            this.dtNgayMua.Location = new System.Drawing.Point(404, 28);
             this.dtNgayMua.Name = "dtNgayMua";
             this.dtNgayMua.Size = new System.Drawing.Size(180, 22);
             this.dtNgayMua.TabIndex = 7;
