@@ -142,7 +142,7 @@ alter table SANPHAM add constraint  CHK_DonGiaGoc Check (GiaGoc>=0)
 -- DonGia >= DonGiaGoc của 1 sẩn phẩm trong bảng SANPHAM
 alter table SANPHAM add constraint  CHK_DonGia_GiaGoc Check (DonGia>=GiaGoc)
 Go
--- Tigger 2: SoLuong của một sản phẩm khi thêm mới CTDH <= SoLuong tồn của sản phẩm đó trong bản SANPHAM. 
+-- Tigger 2: SoLuong của một sản phẩm khi thêm mới CTHD <= SoLuong tồn của sản phẩm đó trong bản SANPHAM. 
 -- Cập nhật lại SoLuong sản phẩm trong bảng SANPHAM
 Create trigger trg_InsertCTHD_SoLuong
 on CTHD for insert
@@ -161,33 +161,4 @@ as
 		end
 	 
 Go
-
--- Xây dựng hàm phát sinh mã đơn hàng có dạng "HD0001" theo thứ tự tăng dần
-Create function fn_CreateMaHD()
-	returns nvarchar(10)
-begin
-		
-		declare @MaHDOld varchar(10), @MaHDNew nvarchar(10)
-		select Top 1 @MaHDOld=MaHD from DONHANG order by MaHD Desc
-		Return 'HD' + format(right(@MaHDOld,4)+1,'000#')
-end
-Go
-
-select dbo.fn_CreateMaHD()
-
-
--- Xây dựng store phát sinh mã đơn hàng có dạng "HD0001" theo thứ tự tăng dần
-Go
-Create procedure proc_CreateMaHD
-	@MaHDNew nvarchar(10) output
-as
-		
-		declare @MaHDOld varchar(10)
-		select Top 1 @MaHDOld=MaHD from DONHANG order by MaHD Desc
-		set @MaHDNew = 'HD' + format(right(@MaHDOld,4)+1,'000#')
-Go
-
-Declare @MaHD nvarchar(10) 
-Exec dbo.proc_CreateMaHD @MaHD output
-print @MaHD
 
