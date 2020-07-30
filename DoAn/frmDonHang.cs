@@ -56,7 +56,7 @@ namespace DoAn
             //loadCTHD();
             var cmb = new SqlCommandBuilder(daDH);
             //txtHoTen.DataBindings.Add("text", tblCTHD, "TenKH", true);
-            txtDonGia.DataBindings.Add("text", tblCTHD, "DonGia", true);
+            //txtDonGia.DataBindings.Add("text", tblCTHD, "DonGia", true);
             //txtMaKH.DataBindings.Add("text", tblCTHD, "MaKH", true);
             //txtTenSP.DataBindings.Add("text", tblCTHD, "TenSP", true);
             txtThanhTien.DataBindings.Add("text", tblCTHD, "Tong", true);
@@ -64,6 +64,8 @@ namespace DoAn
             //dtNgayMua.Value = DateTime.Today;
             DSHD = this.BindingContext[tblCTHD];
             enableButton();
+            dgvTTHD.AutoGenerateColumns = false;
+            dgvTTHD.DataSource = tblCTHD;
 
         }
         private void loadCTHD()
