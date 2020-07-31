@@ -15,7 +15,7 @@ namespace DoAn
     {
         DataTable tblSanPham,tblNSX;
         SqlDataAdapter daSanPham,daNSX;
-        BindingManagerBase DSSP;
+        BindingManagerBase bindSP,bindNSX;
         bool capnhat = false;
         public frmSanPham()
         {
@@ -47,12 +47,18 @@ namespace DoAn
             var cmb = new SqlCommandBuilder(daSanPham);
             loadNSX();
             txtTenSP.DataBindings.Add("text", tblSanPham, "TenSP", true);
-            txtTenNSX.DataBindings.Add("text", tblSanPham, "TenNSX", true);
             txtMaSP.DataBindings.Add("text", tblSanPham, "MaSP", true);
             txtDonGia.DataBindings.Add("text", tblSanPham, "DonGia", true);
             txtDonVi.DataBindings.Add("text", tblSanPham, "DonVi", true);
             numSoLuong.DataBindings.Add("Value", tblSanPham, "SoLuong", true);
-            DSSP = this.BindingContext[tblSanPham];
+            txtGiaGoc.DataBindings.Add("text", tblSanPham, "GiaGoc", true);
+            cboNSX.DataSource = tblNSX;
+            cboNSX.DisplayMember = "TenNSX";
+            cboNSX.ValueMember = "MaNSX";
+            cboNSX.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cboNSX.AutoCompleteSource = AutoCompleteSource.ListItems;
+            cboNSX.SelectedIndex = -1;
+            bindSP = this.BindingContext[tblSanPham];
             enableButton();
         }
         private void loadNSX()
@@ -62,7 +68,9 @@ namespace DoAn
             DataRelation qh = new DataRelation("FRK_NSX_SANPHAM", tblNSX.Columns["MaNSX"], tblSanPham.Columns["MaNSX"]);
             ds.Relations.Add(qh);
             DataColumn cTenNSX = new DataColumn("TenNSX", Type.GetType("System.String"), "Parent(FRK_NSX_SANPHAM).TenNSX");
+            DataColumn cDiaChiNSX = new DataColumn("DiaChiNSX", Type.GetType("System.String"), "Parent(FRK_NSX_SANPHAM).DiaChiNSX");
             tblSanPham.Columns.Add(cTenNSX);
+            tblSanPham.Columns.Add(cDiaChiNSX);
             dgvSP.AutoGenerateColumns = false;
             dgvSP.DataSource = tblSanPham;
         }
@@ -79,16 +87,17 @@ namespace DoAn
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            DSSP.AddNew();
+            bindSP.AddNew();
             capnhat = true;
             enableButton();
+
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
             try
             {
-                DSSP.EndCurrentEdit();
+                bindSP.EndCurrentEdit();
                 daSanPham.Update(tblSanPham);
                 tblSanPham.AcceptChanges();
                 capnhat = false;
@@ -102,7 +111,7 @@ namespace DoAn
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            DSSP.CancelCurrentEdit();
+            bindSP.CancelCurrentEdit();
             tblSanPham.RejectChanges();
             capnhat = false;
             enableButton();
@@ -118,7 +127,7 @@ namespace DoAn
         {
             try
             {
-                DSSP.RemoveAt(DSSP.Position);
+                bindSP.RemoveAt(bindSP.Position);
                 daSanPham.Update(tblSanPham);
                 tblSanPham.AcceptChanges();
 

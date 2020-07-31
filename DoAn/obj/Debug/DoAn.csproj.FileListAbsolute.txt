@@ -389,3 +389,4 @@ D:\VTB\QLNS\DoAn\bin\Debug\CrystalDecisions.ReportSource.dll
 D:\VTB\QLNS\DoAn\bin\Debug\CrystalDecisions.Shared.dll
 D:\VTB\QLNS\DoAn\bin\Debug\CrystalDecisions.Windows.Forms.dll
 D:\VTB\QLNS\DoAn\bin\Debug\FlashControlV71.dll
+D:\VTB\QLNS\DoAn\obj\Debug\DoAn.frmLoaiSanPham.resources

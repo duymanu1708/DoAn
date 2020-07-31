@@ -34,6 +34,7 @@
             this.btnKhoSanPham = new DevExpress.XtraBars.BarButtonItem();
             this.btnDonHang = new DevExpress.XtraBars.BarButtonItem();
             this.btnThongKeDoanhThu = new DevExpress.XtraBars.BarButtonItem();
+            this.btnLoaiSP = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -52,9 +53,10 @@
             this.btnKhachHang,
             this.btnKhoSanPham,
             this.btnDonHang,
-            this.btnThongKeDoanhThu});
+            this.btnThongKeDoanhThu,
+            this.btnLoaiSP});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 5;
+            this.ribbonControl1.MaxItemId = 6;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -96,6 +98,15 @@
             this.btnThongKeDoanhThu.Name = "btnThongKeDoanhThu";
             this.btnThongKeDoanhThu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThongKeDoanhThu_ItemClick);
             // 
+            // btnLoaiSP
+            // 
+            this.btnLoaiSP.Caption = "Loại Sản Phảm";
+            this.btnLoaiSP.Id = 5;
+            this.btnLoaiSP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLoaiSP.ImageOptions.Image")));
+            this.btnLoaiSP.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLoaiSP.ImageOptions.LargeImage")));
+            this.btnLoaiSP.Name = "btnLoaiSP";
+            this.btnLoaiSP.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLoaiSP_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -115,6 +126,7 @@
             // ribbonPageGroup2
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.btnKhoSanPham);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnLoaiSP);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "ribbonPageGroup2";
             // 
@@ -167,5 +179,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private DevExpress.XtraBars.BarButtonItem btnThongKeDoanhThu;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
+        private DevExpress.XtraBars.BarButtonItem btnLoaiSP;
     }
 }
