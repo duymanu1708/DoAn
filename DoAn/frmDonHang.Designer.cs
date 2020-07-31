@@ -51,32 +51,6 @@
             this.Column7 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvTTHD = new System.Windows.Forms.DataGridView();
-            this.btnThem = new DevExpress.XtraEditors.SimpleButton();
-            this.btnSua = new DevExpress.XtraEditors.SimpleButton();
-            this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
-            this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
-            this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
-            this.btnInHD = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
-            this.grTTKH = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtDonGia = new System.Windows.Forms.TextBox();
-            this.numSoLuong = new System.Windows.Forms.NumericUpDown();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtThanhTien = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtTenSP = new System.Windows.Forms.TextBox();
-            this.dtNgayMua = new System.Windows.Forms.DateTimePicker();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtMaKH = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtHoTen = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.grTimKiem = new System.Windows.Forms.GroupBox();
-            this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,6 +58,32 @@
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnThem = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSua = new DevExpress.XtraEditors.SimpleButton();
+            this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
+            this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
+            this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
+            this.btnInHD = new DevExpress.XtraEditors.SimpleButton();
+            this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
+            this.grTTKH = new System.Windows.Forms.GroupBox();
+            this.cboTenSP = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtDonGia = new System.Windows.Forms.TextBox();
+            this.numSoLuong = new System.Windows.Forms.NumericUpDown();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtThanhTien = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.dtNgayMua = new System.Windows.Forms.DateTimePicker();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtMaKH = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtMaHD = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.grTimKiem = new System.Windows.Forms.GroupBox();
+            this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTTHD)).BeginInit();
             this.grTTKH.SuspendLayout();
@@ -284,6 +284,53 @@
             this.dgvTTHD.Size = new System.Drawing.Size(852, 135);
             this.dgvTTHD.TabIndex = 3;
             // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "MaKH";
+            this.Column8.HeaderText = "Mã KH";
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 80;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "MaHD";
+            this.Column9.HeaderText = "Mã HD";
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 80;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "NgayLap";
+            this.Column10.HeaderText = "Ngày mua";
+            this.Column10.Name = "Column10";
+            // 
+            // Column11
+            // 
+            this.Column11.DataPropertyName = "TenSP";
+            this.Column11.HeaderText = "Tên Sản Phẩm";
+            this.Column11.Name = "Column11";
+            this.Column11.Width = 200;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.DataPropertyName = "SoLuong";
+            this.SoLuong.HeaderText = "Số Lượng";
+            this.SoLuong.Name = "SoLuong";
+            this.SoLuong.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Column15
+            // 
+            this.Column15.DataPropertyName = "Tong";
+            this.Column15.HeaderText = "Thành Tiền:";
+            this.Column15.Name = "Column15";
+            this.Column15.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column15.Width = 150;
+            // 
             // btnThem
             // 
             this.btnThem.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -351,18 +398,20 @@
             this.btnInHD.Text = "In HD";
             this.btnInHD.Click += new System.EventHandler(this.btnInHD_Click);
             // 
-            // simpleButton7
+            // btnThoat
             // 
-            this.simpleButton7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton7.ImageOptions.Image")));
-            this.simpleButton7.Location = new System.Drawing.Point(797, 3);
-            this.simpleButton7.Name = "simpleButton7";
-            this.simpleButton7.Size = new System.Drawing.Size(119, 43);
-            this.simpleButton7.TabIndex = 10;
-            this.simpleButton7.Text = "Thoát";
+            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
+            this.btnThoat.Location = new System.Drawing.Point(797, 3);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(119, 43);
+            this.btnThoat.TabIndex = 10;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click_1);
             // 
             // grTTKH
             // 
             this.grTTKH.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.grTTKH.Controls.Add(this.cboTenSP);
             this.grTTKH.Controls.Add(this.label11);
             this.grTTKH.Controls.Add(this.txtDonGia);
             this.grTTKH.Controls.Add(this.numSoLuong);
@@ -370,12 +419,11 @@
             this.grTTKH.Controls.Add(this.label13);
             this.grTTKH.Controls.Add(this.txtThanhTien);
             this.grTTKH.Controls.Add(this.label12);
-            this.grTTKH.Controls.Add(this.txtTenSP);
             this.grTTKH.Controls.Add(this.dtNgayMua);
             this.grTTKH.Controls.Add(this.label10);
             this.grTTKH.Controls.Add(this.txtMaKH);
             this.grTTKH.Controls.Add(this.label9);
-            this.grTTKH.Controls.Add(this.txtHoTen);
+            this.grTTKH.Controls.Add(this.txtMaHD);
             this.grTTKH.Controls.Add(this.label8);
             this.grTTKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grTTKH.Location = new System.Drawing.Point(12, 109);
@@ -384,6 +432,14 @@
             this.grTTKH.TabIndex = 11;
             this.grTTKH.TabStop = false;
             this.grTTKH.Text = "Thông tin khách hàng";
+            // 
+            // cboTenSP
+            // 
+            this.cboTenSP.FormattingEnabled = true;
+            this.cboTenSP.Location = new System.Drawing.Point(121, 88);
+            this.cboTenSP.Name = "cboTenSP";
+            this.cboTenSP.Size = new System.Drawing.Size(166, 24);
+            this.cboTenSP.TabIndex = 19;
             // 
             // label11
             // 
@@ -442,13 +498,6 @@
             this.label12.TabIndex = 11;
             this.label12.Text = "Tên Sản Phẩm:";
             // 
-            // txtTenSP
-            // 
-            this.txtTenSP.Location = new System.Drawing.Point(121, 90);
-            this.txtTenSP.Name = "txtTenSP";
-            this.txtTenSP.Size = new System.Drawing.Size(166, 22);
-            this.txtTenSP.TabIndex = 10;
-            // 
             // dtNgayMua
             // 
             this.dtNgayMua.CustomFormat = "dd/MM/yyyy";
@@ -479,16 +528,16 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(6, 58);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(82, 16);
+            this.label9.Size = new System.Drawing.Size(97, 16);
             this.label9.TabIndex = 3;
-            this.label9.Text = "Họ và tên :";
+            this.label9.Text = "Mã Hóa Đơn:";
             // 
-            // txtHoTen
+            // txtMaHD
             // 
-            this.txtHoTen.Location = new System.Drawing.Point(121, 56);
-            this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(166, 22);
-            this.txtHoTen.TabIndex = 2;
+            this.txtMaHD.Location = new System.Drawing.Point(121, 56);
+            this.txtMaHD.Name = "txtMaHD";
+            this.txtMaHD.Size = new System.Drawing.Size(166, 22);
+            this.txtMaHD.TabIndex = 2;
             // 
             // label8
             // 
@@ -518,6 +567,7 @@
             this.btnTimKiem.Size = new System.Drawing.Size(87, 32);
             this.btnTimKiem.TabIndex = 1;
             this.btnTimKiem.Text = "Tìm Kiếm";
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // txtTimKiem
             // 
@@ -525,54 +575,9 @@
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(278, 20);
             this.txtTimKiem.TabIndex = 0;
-            this.txtTimKiem.Text = "Nhập vào tên khách hàng đề tìm kiếm..";
-            // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "MaKH";
-            this.Column8.HeaderText = "Mã KH";
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 80;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "TenKH";
-            this.Column9.HeaderText = "Họ và tên";
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 200;
-            // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "NgayLap";
-            this.Column10.HeaderText = "Ngày mua";
-            this.Column10.Name = "Column10";
-            // 
-            // Column11
-            // 
-            this.Column11.DataPropertyName = "TenSP";
-            this.Column11.HeaderText = "Tên Sản Phẩm";
-            this.Column11.Name = "Column11";
-            this.Column11.Width = 200;
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.DataPropertyName = "SoLuong";
-            this.SoLuong.HeaderText = "Số Lượng";
-            this.SoLuong.Name = "SoLuong";
-            this.SoLuong.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Column15
-            // 
-            this.Column15.DataPropertyName = "Tong";
-            this.Column15.HeaderText = "Thành Tiền:";
-            this.Column15.Name = "Column15";
-            this.Column15.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column15.Width = 150;
+            this.txtTimKiem.Text = "Nhập vào mã khách hàng đề tìm kiếm..";
+            this.txtTimKiem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTimKiem_KeyPress);
+            this.txtTimKiem.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtTimKiem_MouseDown);
             // 
             // frmDonHang
             // 
@@ -582,7 +587,7 @@
             this.ClientSize = new System.Drawing.Size(918, 628);
             this.Controls.Add(this.grTimKiem);
             this.Controls.Add(this.grTTKH);
-            this.Controls.Add(this.simpleButton7);
+            this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnInHD);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnLuu);
@@ -635,7 +640,7 @@
         private DevExpress.XtraEditors.SimpleButton btnLuu;
         private DevExpress.XtraEditors.SimpleButton btnHuy;
         private DevExpress.XtraEditors.SimpleButton btnInHD;
-        private DevExpress.XtraEditors.SimpleButton simpleButton7;
+        private DevExpress.XtraEditors.SimpleButton btnThoat;
         private System.Windows.Forms.GroupBox grTTKH;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtDonGia;
@@ -644,12 +649,11 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtThanhTien;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtTenSP;
         private System.Windows.Forms.DateTimePicker dtNgayMua;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtMaKH;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtHoTen;
+        private System.Windows.Forms.TextBox txtMaHD;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox grTimKiem;
         private System.Windows.Forms.TextBox txtTimKiem;
@@ -662,6 +666,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
+        private System.Windows.Forms.ComboBox cboTenSP;
     }
 }
 

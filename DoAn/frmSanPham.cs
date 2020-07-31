@@ -94,9 +94,9 @@ namespace DoAn
                 capnhat = false;
                 enableButton();
             }
-            catch(Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Lưu Thất Bại!!");
             }
         }
 
@@ -106,6 +106,12 @@ namespace DoAn
             tblSanPham.RejectChanges();
             capnhat = false;
             enableButton();
+        }
+
+        private void dgvSP_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            foreach (DataGridViewRow r in dgvSP.Rows)
+                r.Cells[0].Value = r.Index + 1;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)

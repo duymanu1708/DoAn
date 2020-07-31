@@ -12,30 +12,17 @@ namespace DoAn
 {
     public partial class frmDonHang : Form
     {
+        DataTable tblSANPHAM, tblDONHANG, tblCTHD;
+        SqlDataAdapter daSP, daDH, daCTHD;
+        bool capnhat = false;
+        BindingManagerBase DSHD;
         public frmDonHang()
         {
             InitializeComponent();
         }
-        DataTable tblKHACHHANG, tblSANPHAM, tblDONHANG, tblCTHD;
-        SqlDataAdapter daSP, daKH, daDH, daCTHD;
-        bool capnhat = false;
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            TabPage p = (TabPage)this.Parent;
-            TabControl tabMain = (TabControl)p.Parent;
-            tabMain.TabPages.Remove(p);
-        }
-        BindingManagerBase DSHD;
-        private void btnInHD_Click(object sender, EventArgs e)
-        {
-            frmRP f = new frmRP();
-            f.WindowState = FormWindowState.Maximized;
-            f.Show();
-        }
+        
         private void frmDonHang_Load(object sender, EventArgs e)
         {
-            tblKHACHHANG = new DataTable();
-            daDH = new SqlDataAdapter("select * from KHACHHANG", Modules.cnnStr);
             tblSANPHAM = new DataTable();
             daSP = new SqlDataAdapter("select * from SANPHAM", Modules.cnnStr);
             tblDONHANG = new DataTable();
@@ -45,7 +32,6 @@ namespace DoAn
             try
             {
                 daDH.Fill(tblDONHANG);
-                daKH.Fill(tblKHACHHANG);
                 daCTHD.Fill(tblCTHD);
                 daSP.Fill(tblSANPHAM);
             }
@@ -53,55 +39,64 @@ namespace DoAn
             {
                 MessageBox.Show(ex.ToString());
             }
-            //loadCTHD();
-            var cmb = new SqlCommandBuilder(daDH);
-            //txtHoTen.DataBindings.Add("text", tblCTHD, "TenKH", true);
-            //txtDonGia.DataBindings.Add("text", tblCTHD, "DonGia", true);
-            //txtMaKH.DataBindings.Add("text", tblCTHD, "MaKH", true);
-            //txtTenSP.DataBindings.Add("text", tblCTHD, "TenSP", true);
+            loadCTHD();
+            loadCBOSP();
+            var cmb = new SqlCommandBuilder(daCTHD);
+            txtMaHD.DataBindings.Add("text", tblCTHD, "MaHD", true);
+            txtDonGia.DataBindings.Add("text", tblCTHD, "DonGia", true);
+            txtMaKH.DataBindings.Add("text", tblCTHD, "MaKH", true);
             txtThanhTien.DataBindings.Add("text", tblCTHD, "Tong", true);
             numSoLuong.DataBindings.Add("Value", tblCTHD, "SoLuong", true);
-            //dtNgayMua.Value = DateTime.Today;
+            dtNgayMua.DataBindings.Add("text", tblCTHD, "NgayLap", true);
             DSHD = this.BindingContext[tblCTHD];
             enableButton();
-            dgvTTHD.AutoGenerateColumns = false;
-            dgvTTHD.DataSource = tblCTHD;
 
         }
         private void loadCTHD()
         {
-            DataSet ds = new DataSet();
-            ds.Tables.AddRange(new DataTable[] { tblDONHANG, tblKHACHHANG });
-            DataRelation qh = new DataRelation("FK_KHACHHANG_DONHANG", tblKHACHHANG.Columns["MaKH"], tblDONHANG.Columns["MaKH"]);
-            ds.Relations.Add(qh);
-            DataColumn cTenKH = new DataColumn("TenKH", Type.GetType("System.String"), "Parent(FK_KHACHHANG_DONHANG).TenKH");
-            tblDONHANG.Columns.Add(cTenKH);
-
             DataSet ds1 = new DataSet();
             ds1.Tables.AddRange(new DataTable[] { tblCTHD, tblDONHANG });
             DataRelation qh1 = new DataRelation("FRK_DONHANG_CTHD", tblDONHANG.Columns["MaHD"],tblCTHD.Columns["MaHD"]);
             ds1.Relations.Add(qh1);
-            DataColumn cTenKhachHang = new DataColumn("TenKH", Type.GetType("System.String"), "Parent(FRK_DONHANG_CTHD).TenKH");
             DataColumn cMaKH = new DataColumn("MaKH", Type.GetType("System.String"), "Parent(FRK_DONHANG_CTHD).MaKH");
-            tblCTHD.Columns.Add(cTenKhachHang);
             tblCTHD.Columns.Add(cMaKH);
+            DataColumn cNgayLap = new DataColumn("NgayLap", Type.GetType("System.String"), "Parent(FRK_DONHANG_CTHD).NgayLap");
+            tblCTHD.Columns.Add(cNgayLap);
 
-            DataSet ds2 = new DataSet();
-            ds2.Tables.AddRange(new DataTable[] { tblCTHD, tblSANPHAM });
+            
+            ds1.Tables.AddRange(new DataTable[] { tblCTHD, tblSANPHAM });
             DataRelation qh2 = new DataRelation("FRK_CTHD_SANPHAM", tblSANPHAM.Columns["MaSP"], tblCTHD.Columns["MaSP"]);
-            ds2.Relations.Add(qh2);
-            DataColumn cTenSP = new DataColumn("TenSP", Type.GetType("System.String"), "Parent(FRK_DONHANG_SANPHAM).TenSP");
-            tblCTHD.Columns.Add(cTenSP);
+            ds1.Relations.Add(qh2);
+            DataColumn cDonGia = new DataColumn("DonGia", Type.GetType("System.String"), "Parent(FRK_CTHD_SANPHAM).DonGia");
+            tblCTHD.Columns.Add(cDonGia);
+
             dgvTTHD.AutoGenerateColumns = false;
             dgvTTHD.DataSource = tblCTHD;
         }
-
+        private void loadCBOSP()
+        {
+            cboTenSP.DataSource = tblSANPHAM;
+            cboTenSP.DisplayMember = "TenSP";
+            cboTenSP.ValueMember = "MaSP";
+        }
         private void dgvTTHD_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             foreach (DataGridViewRow r in dgvTTHD.Rows)
                 r.Cells[0].Value = r.Index + 1;
         }
-        
+        private void btnInHD_Click(object sender, EventArgs e)
+        {
+            frmRP f = new frmRP();
+            f.WindowState = FormWindowState.Maximized;
+            f.Show();
+        }
+        private void btnThoat_Click_1(object sender, EventArgs e)
+        {
+            TabPage p = (TabPage)this.Parent;
+            TabControl tabMain = (TabControl)p.Parent;
+            tabMain.TabPages.Remove(p);
+        }
+
         private void enableButton()
         {
             btnThem.Enabled = !capnhat;
@@ -117,27 +112,52 @@ namespace DoAn
             capnhat = true;
             enableButton();
         }
-        
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataRow r = tblCTHD.Select("MaKH ='" + txtTimKiem.Text + "'")[0];
+                DSHD.Position =tblCTHD.Rows.IndexOf(r);
+            }
+            catch
+            {
+                MessageBox.Show("Không Tìm Thấy");
+            }
+        }
+
+
+        private void txtTimKiem_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtTimKiem.Text = "";
+        }
+
+        private void txtTimKiem_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+                btnTimKiem_Click(sender, e);
+        }
+
         private void btnLuu_Click(object sender, EventArgs e)
         {
             try
             {
                 DSHD.EndCurrentEdit();
-                daKH.Update(tblDONHANG);
+                daCTHD.Update(tblCTHD);
                 tblDONHANG.AcceptChanges();
                 capnhat = false;
                 enableButton();
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Lưu Thất Bại!!");
             }
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
             DSHD.CancelCurrentEdit();
-            tblDONHANG.RejectChanges();
+            tblCTHD.RejectChanges();
             capnhat = false;
             enableButton();
         }
@@ -147,12 +167,12 @@ namespace DoAn
             try
             {
                 DSHD.RemoveAt(DSHD.Position);
-                daDH.Update(tblDONHANG);
-                tblDONHANG.AcceptChanges();
+                daCTHD.Update(tblCTHD);
+                tblCTHD.AcceptChanges();
             }
-            catch (SqlException ex)
+            catch
             {
-                tblDONHANG.RejectChanges();
+                tblCTHD.RejectChanges();
                 MessageBox.Show("Xóa thất bại!");
             }
 
