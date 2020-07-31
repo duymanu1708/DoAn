@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDonHang));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -64,6 +63,7 @@
             this.btnInHD = new DevExpress.XtraEditors.SimpleButton();
             this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.grTTC = new System.Windows.Forms.GroupBox();
+            this.btnSua = new DevExpress.XtraEditors.SimpleButton();
             this.btnLast = new DevExpress.XtraEditors.SimpleButton();
             this.btnNext = new DevExpress.XtraEditors.SimpleButton();
             this.Previous = new DevExpress.XtraEditors.SimpleButton();
@@ -84,17 +84,14 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.grTTHD = new System.Windows.Forms.GroupBox();
-            this.txtThanhTien = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
+            this.btnXoaSP = new DevExpress.XtraEditors.SimpleButton();
             this.cboTenSP = new System.Windows.Forms.ComboBox();
-            this.btnThemHD = new DevExpress.XtraEditors.SimpleButton();
-            this.bdDH = new System.Windows.Forms.BindingSource(this.components);
+            this.btnThemSP = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTTHD)).BeginInit();
             this.grTTC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSoLuong)).BeginInit();
             this.grTTHD.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bdDH)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -316,7 +313,7 @@
             // 
             // Column15
             // 
-            this.Column15.DataPropertyName = "Tong";
+            this.Column15.DataPropertyName = "ThanhTien";
             this.Column15.HeaderText = "Thành Tiền:";
             this.Column15.Name = "Column15";
             this.Column15.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -375,7 +372,7 @@
             this.btnInHD.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInHD.Appearance.Options.UseFont = true;
             this.btnInHD.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInHD.ImageOptions.Image")));
-            this.btnInHD.Location = new System.Drawing.Point(648, 66);
+            this.btnInHD.Location = new System.Drawing.Point(756, 132);
             this.btnInHD.Name = "btnInHD";
             this.btnInHD.Size = new System.Drawing.Size(85, 43);
             this.btnInHD.TabIndex = 9;
@@ -383,8 +380,10 @@
             // 
             // btnThoat
             // 
+            this.btnThoat.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.Appearance.Options.UseFont = true;
             this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
-            this.btnThoat.Location = new System.Drawing.Point(756, 132);
+            this.btnThoat.Location = new System.Drawing.Point(779, 12);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(85, 43);
             this.btnThoat.TabIndex = 10;
@@ -394,9 +393,9 @@
             // grTTC
             // 
             this.grTTC.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.grTTC.Controls.Add(this.btnSua);
             this.grTTC.Controls.Add(this.btnLast);
             this.grTTC.Controls.Add(this.btnNext);
-            this.grTTC.Controls.Add(this.btnThoat);
             this.grTTC.Controls.Add(this.Previous);
             this.grTTC.Controls.Add(this.btnFirst);
             this.grTTC.Controls.Add(this.txtDiaChi);
@@ -423,6 +422,18 @@
             this.grTTC.TabIndex = 11;
             this.grTTC.TabStop = false;
             this.grTTC.Text = "Thông Tin Chung";
+            // 
+            // btnSua
+            // 
+            this.btnSua.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Appearance.Options.UseFont = true;
+            this.btnSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.Image")));
+            this.btnSua.Location = new System.Drawing.Point(648, 70);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(85, 43);
+            this.btnSua.TabIndex = 13;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnLast
             // 
@@ -569,7 +580,7 @@
             // 
             this.numSoLuong.Location = new System.Drawing.Point(404, 35);
             this.numSoLuong.Name = "numSoLuong";
-            this.numSoLuong.Size = new System.Drawing.Size(39, 21);
+            this.numSoLuong.Size = new System.Drawing.Size(104, 21);
             this.numSoLuong.TabIndex = 16;
             // 
             // label14
@@ -593,36 +604,31 @@
             // grTTHD
             // 
             this.grTTHD.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.grTTHD.Controls.Add(this.txtThanhTien);
-            this.grTTHD.Controls.Add(this.label16);
+            this.grTTHD.Controls.Add(this.btnXoaSP);
             this.grTTHD.Controls.Add(this.cboTenSP);
-            this.grTTHD.Controls.Add(this.btnThemHD);
+            this.grTTHD.Controls.Add(this.btnThemSP);
             this.grTTHD.Controls.Add(this.label14);
             this.grTTHD.Controls.Add(this.numSoLuong);
             this.grTTHD.Controls.Add(this.label13);
             this.grTTHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grTTHD.Location = new System.Drawing.Point(12, 299);
             this.grTTHD.Name = "grTTHD";
-            this.grTTHD.Size = new System.Drawing.Size(852, 89);
+            this.grTTHD.Size = new System.Drawing.Size(852, 98);
             this.grTTHD.TabIndex = 12;
             this.grTTHD.TabStop = false;
             this.grTTHD.Text = "Thông Tin Hóa Đơn";
             // 
-            // txtThanhTien
+            // btnXoaSP
             // 
-            this.txtThanhTien.Location = new System.Drawing.Point(538, 35);
-            this.txtThanhTien.Name = "txtThanhTien";
-            this.txtThanhTien.Size = new System.Drawing.Size(135, 21);
-            this.txtThanhTien.TabIndex = 33;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(449, 38);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(83, 15);
-            this.label16.TabIndex = 32;
-            this.label16.Text = "Thành TIền:";
+            this.btnXoaSP.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaSP.Appearance.Options.UseFont = true;
+            this.btnXoaSP.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXoaSP.ImageOptions.SvgImage")));
+            this.btnXoaSP.Location = new System.Drawing.Point(703, 28);
+            this.btnXoaSP.Name = "btnXoaSP";
+            this.btnXoaSP.Size = new System.Drawing.Size(118, 46);
+            this.btnXoaSP.TabIndex = 34;
+            this.btnXoaSP.Text = "Xóa SP";
+            this.btnXoaSP.Click += new System.EventHandler(this.btnXoaSP_Click);
             // 
             // cboTenSP
             // 
@@ -632,21 +638,17 @@
             this.cboTenSP.Size = new System.Drawing.Size(162, 23);
             this.cboTenSP.TabIndex = 31;
             // 
-            // btnThemHD
+            // btnThemSP
             // 
-            this.btnThemHD.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemHD.Appearance.Options.UseFont = true;
-            this.btnThemHD.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThemHD.ImageOptions.Image")));
-            this.btnThemHD.Location = new System.Drawing.Point(690, 16);
-            this.btnThemHD.Name = "btnThemHD";
-            this.btnThemHD.Size = new System.Drawing.Size(135, 59);
-            this.btnThemHD.TabIndex = 17;
-            this.btnThemHD.Text = "Thêm HD";
-            this.btnThemHD.Click += new System.EventHandler(this.btnThemHD_Click);
-            // 
-            // bdDH
-            // 
-            this.bdDH.PositionChanged += new System.EventHandler(this.bdDH_PositionChanged);
+            this.btnThemSP.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemSP.Appearance.Options.UseFont = true;
+            this.btnThemSP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThemSP.ImageOptions.Image")));
+            this.btnThemSP.Location = new System.Drawing.Point(556, 28);
+            this.btnThemSP.Name = "btnThemSP";
+            this.btnThemSP.Size = new System.Drawing.Size(118, 45);
+            this.btnThemSP.TabIndex = 17;
+            this.btnThemSP.Text = "Thêm SP";
+            this.btnThemSP.Click += new System.EventHandler(this.btnThemSP_Click);
             // 
             // frmDonHang
             // 
@@ -656,6 +658,7 @@
             this.ClientSize = new System.Drawing.Size(918, 628);
             this.Controls.Add(this.grTTHD);
             this.Controls.Add(this.grTTC);
+            this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.dgvTTHD);
             this.Controls.Add(this.label7);
             this.Name = "frmDonHang";
@@ -668,7 +671,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numSoLuong)).EndInit();
             this.grTTHD.ResumeLayout(false);
             this.grTTHD.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bdDH)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -725,11 +727,10 @@
         private DevExpress.XtraEditors.SimpleButton btnNext;
         private DevExpress.XtraEditors.SimpleButton Previous;
         private DevExpress.XtraEditors.SimpleButton btnFirst;
-        private DevExpress.XtraEditors.SimpleButton btnThemHD;
+        private DevExpress.XtraEditors.SimpleButton btnThemSP;
         private System.Windows.Forms.ComboBox cboTenSP;
-        private System.Windows.Forms.BindingSource bdDH;
-        private System.Windows.Forms.TextBox txtThanhTien;
-        private System.Windows.Forms.Label label16;
+        private DevExpress.XtraEditors.SimpleButton btnXoaSP;
+        private DevExpress.XtraEditors.SimpleButton btnSua;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;

@@ -19,23 +19,13 @@ namespace DoAn
         DataTable tblKHACHHANG, tblCTHD, tblDONHANG, tblSANPHAM;
         SqlDataAdapter daKHACHHANG, daCTHD, daDONHANG, daSANPHAM;
         bool capNhat;
-        private void bdDH_PositionChanged(object sender, EventArgs e)
-        {
-            tblCTHD.DefaultView.RowFilter = "MaHD='" + txtMaHD.Text + "'";
-            int s = 0;
-            foreach(DataRowView r in tblCTHD.DefaultView)
-            {
-                s += int.Parse(r["ThanhTien"].ToString());
-            }
-            txtThanhTien.Text = s.ToString();
-        }
+
         private void loadDSKH()
         {
             txtMaHD.DataBindings.Add("text", tblDONHANG, "MaHD", true);
             dtNgayLap.DataBindings.Add("text", tblDONHANG, "NgayLap", true);
             cboSDT.DataBindings.Add("selectedValue", tblDONHANG, "MaKH",true);
             bindDH = this.BindingContext[tblDONHANG];
-            bindDH.PositionChanged += new EventHandler(bdDH_PositionChanged);
         }
         private void ennableButton()
         {
@@ -43,7 +33,10 @@ namespace DoAn
             btnXoa.Enabled = !capNhat;
             btnHuy.Enabled = capNhat;
             btnLuu.Enabled = capNhat;
-            btnThemHD.Enabled = capNhat;
+            btnThemSP.Enabled = capNhat;
+            btnXoaSP.Enabled = capNhat;
+            btnSua.Enabled = !capNhat;
+            btnInHD.Enabled = !capNhat;
             dgvTTHD.Enabled = capNhat;
         }
 
@@ -71,11 +64,10 @@ namespace DoAn
                 MessageBox.Show(ex.ToString());
             }
             loadCTHD();
-            loadDonHang();
+            loadSanPham();
             loadDSDT();
             loadDSKH();
             addColCTHD();
-            bdDH_PositionChanged(sender, e);
             capNhat = false;
             ennableButton();
         }
@@ -117,7 +109,7 @@ namespace DoAn
             tabMain.TabPages.Remove(p);
         }
 
-        private void btnThemHD_Click(object sender, EventArgs e)
+        private void btnThemSP_Click(object sender, EventArgs e)
         {
             if(cboTenSP.SelectedIndex==-1)
             {
@@ -131,19 +123,33 @@ namespace DoAn
                 return;
             }
             DataRow r = tblCTHD.NewRow();
-            r["MaTC"] = cboTenSP.SelectedValue;
+            r["MaSP"] = cboTenSP.SelectedValue;
             r["MaHD"] = txtMaHD.Text;
             r["SoLuong"] = numSoLuong.Value;
-            r["Tong"] = txtThanhTien.Text;
+
             tblCTHD.Rows.Add(r);
-            bdDH_PositionChanged(sender, e);
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            int index = bindCTHD.Position;
-            if (index >= 0)
-                bindCTHD.RemoveAt(index);
+            try
+            {
+                var rows = tblDONHANG.Select("MaHD ='" + txtMaHD + "'");
+                foreach (DataRow r in rows)
+                    r.Delete();
+                daCTHD.Update(tblCTHD);
+                tblCTHD.AcceptChanges();
+                bindDH.RemoveAt(bindDH.Position);
+                daDONHANG.Update(tblDONHANG);
+                tblDONHANG.AcceptChanges();
+                MessageBox.Show("Xóa thành công!!");
+            }catch(SqlException ex)
+            {
+                tblCTHD.RejectChanges();
+                tblDONHANG.RejectChanges();
+                MessageBox.Show(ex.ToString());
+            }
+            
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -152,7 +158,6 @@ namespace DoAn
             tblCTHD.RejectChanges();
             bindDH.CancelCurrentEdit();
             tblDONHANG.RejectChanges();
-            bdDH_PositionChanged(sender, e);
             capNhat = false;
             ennableButton();
         }
@@ -202,6 +207,18 @@ namespace DoAn
             }
         }
 
+        private void btnXoaSP_Click(object sender, EventArgs e)
+        {
+            int index = bindCTHD.Position;
+            if (index >= 0)
+                bindCTHD.RemoveAt(index);
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            capNhat = true;
+            ennableButton();
+        }
 
         BindingManagerBase bindDH, bindCTHD;
         private void cboSDT_SelectedIndexChanged(object sender, EventArgs e)
@@ -229,13 +246,14 @@ namespace DoAn
                 radNam.Checked = false;
             }
         }
-        private void loadDonHang()
+        private void loadSanPham()
         {
             cboTenSP.DataSource = tblSANPHAM;
             cboTenSP.ValueMember = "MaSP";
             cboTenSP.DisplayMember = "TenSP";
             cboTenSP.AutoCompleteMode = AutoCompleteMode.Suggest;
             cboTenSP.AutoCompleteSource = AutoCompleteSource.ListItems;
+            cboTenSP.SelectedIndex = -1;
         }
         private void loadDSDT()
         {
