@@ -51,6 +51,11 @@
             this.Column7 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvTTHD = new System.Windows.Forms.DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.btnSua = new DevExpress.XtraEditors.SimpleButton();
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
@@ -59,6 +64,10 @@
             this.btnInHD = new DevExpress.XtraEditors.SimpleButton();
             this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.grTTC = new System.Windows.Forms.GroupBox();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
@@ -76,17 +85,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txtThanhTien = new System.Windows.Forms.TextBox();
             this.grTTHD = new System.Windows.Forms.GroupBox();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTTHD)).BeginInit();
             this.grTTC.SuspendLayout();
@@ -285,6 +285,38 @@
             this.dgvTTHD.Size = new System.Drawing.Size(852, 135);
             this.dgvTTHD.TabIndex = 3;
             // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            // 
+            // Column11
+            // 
+            this.Column11.DataPropertyName = "TenSP";
+            this.Column11.HeaderText = "Tên Sản Phẩm";
+            this.Column11.Name = "Column11";
+            this.Column11.Width = 200;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.DataPropertyName = "SoLuong";
+            this.SoLuong.HeaderText = "Số Lượng";
+            this.SoLuong.Name = "SoLuong";
+            this.SoLuong.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // DonGia
+            // 
+            this.DonGia.HeaderText = "Đơn GIá";
+            this.DonGia.Name = "DonGia";
+            // 
+            // Column15
+            // 
+            this.Column15.DataPropertyName = "Tong";
+            this.Column15.HeaderText = "Thành Tiền:";
+            this.Column15.Name = "Column15";
+            this.Column15.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column15.Width = 150;
+            // 
             // btnThem
             // 
             this.btnThem.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -350,6 +382,7 @@
             this.btnInHD.Size = new System.Drawing.Size(85, 43);
             this.btnInHD.TabIndex = 9;
             this.btnInHD.Text = "In HD";
+            this.btnInHD.Click += new System.EventHandler(this.btnInHD_Click);
             // 
             // btnThoat
             // 
@@ -392,6 +425,38 @@
             this.grTTC.TabIndex = 11;
             this.grTTC.TabStop = false;
             this.grTTC.Text = "Thông Tin Chung";
+            // 
+            // simpleButton4
+            // 
+            this.simpleButton4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton4.ImageOptions.SvgImage")));
+            this.simpleButton4.Location = new System.Drawing.Point(254, 146);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(51, 32);
+            this.simpleButton4.TabIndex = 30;
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton3.ImageOptions.SvgImage")));
+            this.simpleButton3.Location = new System.Drawing.Point(197, 146);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(51, 32);
+            this.simpleButton3.TabIndex = 29;
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton2.ImageOptions.SvgImage")));
+            this.simpleButton2.Location = new System.Drawing.Point(140, 146);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(51, 32);
+            this.simpleButton2.TabIndex = 28;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.simpleButton1.Location = new System.Drawing.Point(85, 146);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(51, 32);
+            this.simpleButton1.TabIndex = 27;
             // 
             // textBox5
             // 
@@ -544,70 +609,6 @@
             this.grTTHD.TabIndex = 12;
             this.grTTHD.TabStop = false;
             this.grTTHD.Text = "Thông Tin Hóa Đơn";
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.simpleButton1.Location = new System.Drawing.Point(85, 146);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(51, 32);
-            this.simpleButton1.TabIndex = 27;
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton2.ImageOptions.SvgImage")));
-            this.simpleButton2.Location = new System.Drawing.Point(140, 146);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(51, 32);
-            this.simpleButton2.TabIndex = 28;
-            // 
-            // simpleButton3
-            // 
-            this.simpleButton3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton3.ImageOptions.SvgImage")));
-            this.simpleButton3.Location = new System.Drawing.Point(197, 146);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(51, 32);
-            this.simpleButton3.TabIndex = 29;
-            // 
-            // simpleButton4
-            // 
-            this.simpleButton4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton4.ImageOptions.SvgImage")));
-            this.simpleButton4.Location = new System.Drawing.Point(254, 146);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(51, 32);
-            this.simpleButton4.TabIndex = 30;
-            // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            // 
-            // Column11
-            // 
-            this.Column11.DataPropertyName = "TenSP";
-            this.Column11.HeaderText = "Tên Sản Phẩm";
-            this.Column11.Name = "Column11";
-            this.Column11.Width = 200;
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.DataPropertyName = "SoLuong";
-            this.SoLuong.HeaderText = "Số Lượng";
-            this.SoLuong.Name = "SoLuong";
-            this.SoLuong.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // DonGia
-            // 
-            this.DonGia.HeaderText = "Đơn GIá";
-            this.DonGia.Name = "DonGia";
-            // 
-            // Column15
-            // 
-            this.Column15.DataPropertyName = "Tong";
-            this.Column15.HeaderText = "Thành Tiền:";
-            this.Column15.Name = "Column15";
-            this.Column15.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column15.Width = 150;
             // 
             // simpleButton5
             // 

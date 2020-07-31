@@ -16,5 +16,12 @@ namespace DoAn
         {
             InitializeComponent();
         }
+
+        private void btnInHD_Click(object sender, EventArgs e)
+        {
+            frmRP f = new frmRP();
+            f.WindowState = FormWindowState.Maximized;
+            f.Show();
+        }
     }
 }
