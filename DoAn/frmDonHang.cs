@@ -26,6 +26,7 @@ namespace DoAn
             dtNgayLap.DataBindings.Add("text", tblDONHANG, "NgayLap", true);
             cboSDT.DataBindings.Add("selectedValue", tblDONHANG, "MaKH",true);
             bindDH = this.BindingContext[tblDONHANG];
+            bindDH.PositionChanged += new EventHandler(bdDH_PositionChanged);
         }
         private void ennableButton()
         {
@@ -39,7 +40,12 @@ namespace DoAn
             btnInHD.Enabled = !capNhat;
             dgvTTHD.Enabled = capNhat;
         }
+        private void bdDH_PositionChanged(object sender, EventArgs e)
+        {
+            tblCTHD.DefaultView.RowFilter = "MaHD='" + txtMaHD.Text + "'";
 
+
+        }
         private void frmDonHang_Load(object sender, EventArgs e)
         {
             tblKHACHHANG = new DataTable();
@@ -68,6 +74,7 @@ namespace DoAn
             loadDSDT();
             loadDSKH();
             addColCTHD();
+            bdDH_PositionChanged(sender, e);
             capNhat = false;
             ennableButton();
         }
@@ -126,8 +133,8 @@ namespace DoAn
             r["MaSP"] = cboTenSP.SelectedValue;
             r["MaHD"] = txtMaHD.Text;
             r["SoLuong"] = numSoLuong.Value;
-
             tblCTHD.Rows.Add(r);
+            bdDH_PositionChanged(sender, e);
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -158,6 +165,7 @@ namespace DoAn
             tblCTHD.RejectChanges();
             bindDH.CancelCurrentEdit();
             tblDONHANG.RejectChanges();
+            bdDH_PositionChanged(sender, e);
             capNhat = false;
             ennableButton();
         }
