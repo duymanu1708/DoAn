@@ -87,9 +87,9 @@ namespace DoAn
                 capnhat = false;
                 enableButton();
             }
-            catch 
+            catch (Exception ex)
             {
-                MessageBox.Show("Lưu Thất Bại!!");        
+                MessageBox.Show(ex.Message);        
             }
         }
 
@@ -109,7 +109,7 @@ namespace DoAn
                 daKhachHang.Update(tblKhachHang);
                 tblKhachHang.AcceptChanges();
             }
-            catch
+            catch(SqlException ex)
             {
                 tblKhachHang.RejectChanges();
                 MessageBox.Show("Xóa thất bại!");
@@ -125,8 +125,10 @@ namespace DoAn
 
         private void dgvKH_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            foreach (DataGridViewRow r in dgvKH.Rows)
+            foreach(DataGridViewRow r in dgvKH.Rows)
+            {
                 r.Cells[0].Value = r.Index + 1;
+            }
         }
     }
 }

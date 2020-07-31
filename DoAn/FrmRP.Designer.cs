@@ -43,13 +43,13 @@
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(972, 447);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1411, 619);
             this.crystalReportViewer1.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(190, 472);
+            this.label1.Location = new System.Drawing.Point(189, 636);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(114, 13);
             this.label1.TabIndex = 1;
@@ -57,7 +57,7 @@
             // 
             // txtTimkiemRP
             // 
-            this.txtTimkiemRP.Location = new System.Drawing.Point(317, 469);
+            this.txtTimkiemRP.Location = new System.Drawing.Point(316, 633);
             this.txtTimkiemRP.Name = "txtTimkiemRP";
             this.txtTimkiemRP.Size = new System.Drawing.Size(145, 20);
             this.txtTimkiemRP.TabIndex = 2;
@@ -72,8 +72,8 @@
             // 
             // btnTimkiemRP
             // 
-            this.btnTimkiemRP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.btnTimkiemRP.Location = new System.Drawing.Point(468, 461);
+            this.btnTimkiemRP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTimkiemRP.ImageOptions.Image")));
+            this.btnTimkiemRP.Location = new System.Drawing.Point(467, 625);
             this.btnTimkiemRP.Name = "btnTimkiemRP";
             this.btnTimkiemRP.Size = new System.Drawing.Size(122, 35);
             this.btnTimkiemRP.TabIndex = 4;
@@ -84,7 +84,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(974, 514);
+            this.ClientSize = new System.Drawing.Size(1601, 793);
             this.Controls.Add(this.btnTimkiemRP);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.txtTimkiemRP);
