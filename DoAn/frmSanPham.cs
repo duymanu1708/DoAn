@@ -123,7 +123,7 @@ namespace DoAn
                 tblSanPham.AcceptChanges();
 
             }
-            catch (SqlException ex)
+            catch
             {
                 tblSanPham.RejectChanges();
                 MessageBox.Show("Xoa that bai!");

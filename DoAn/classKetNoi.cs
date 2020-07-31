@@ -78,9 +78,8 @@ namespace DoAn
                 SqlCommand lenh = new SqlCommand(caulenhsql, kn);
                 kq = lenh.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch
             {
-                //Thông báo lỗi ra!
 
                 kq = 0;
             }
