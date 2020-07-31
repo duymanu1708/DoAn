@@ -384,3 +384,8 @@ D:\New folder (5)\DoAn\DoAn\obj\Debug\DoAn.csproj.CoreCompileInputs.cache
 D:\New folder (5)\DoAn\DoAn\obj\Debug\DoAn.csproj.CopyComplete
 D:\New folder (5)\DoAn\DoAn\obj\Debug\DoAn.exe
 D:\New folder (5)\DoAn\DoAn\obj\Debug\DoAn.pdb
+D:\VTB\QLNS\DoAn\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+D:\VTB\QLNS\DoAn\bin\Debug\CrystalDecisions.ReportSource.dll
+D:\VTB\QLNS\DoAn\bin\Debug\CrystalDecisions.Shared.dll
+D:\VTB\QLNS\DoAn\bin\Debug\CrystalDecisions.Windows.Forms.dll
+D:\VTB\QLNS\DoAn\bin\Debug\FlashControlV71.dll

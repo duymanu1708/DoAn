@@ -109,7 +109,7 @@ namespace DoAn
                 daKhachHang.Update(tblKhachHang);
                 tblKhachHang.AcceptChanges();
             }
-            catch(SqlException ex)
+            catch
             {
                 tblKhachHang.RejectChanges();
                 MessageBox.Show("Xóa thất bại!");
