@@ -60,7 +60,7 @@ CREATE TABLE CTHD(
 	MaHD varchar(10) NOT NULL,
 	MaSP varchar(10) NULL,
 	SoLuong int NULL,
-	Tong float NULL,
+	Tong int NULL,
  CONSTRAINT PK_CTHD PRIMARY KEY  (MaCTHD)
 ) 
 GO
@@ -175,18 +175,29 @@ Go
 
 select dbo.fn_CreateMaHD()
 
-
--- Xây dựng store phát sinh mã đơn hàng có dạng "HD0001" theo thứ tự tăng dần
-Go
-Create procedure proc_CreateMaHD
-	@MaHDNew nvarchar(10) output
-as
+-- Xây dựng hàm phát sinh mã NSX có dạng "NSX0001" theo thứ tự tăng dần
+Create function fn_CreateMaNSX()
+	returns nvarchar(10)
+begin
 		
-		declare @MaHDOld varchar(10)
-		select Top 1 @MaHDOld=MaHD from DONHANG order by MaHD Desc
-		set @MaHDNew = 'HD' + format(right(@MaHDOld,4)+1,'000#')
+		declare @MaNSXOld varchar(10), @MaNSXNew nvarchar(10)
+		select Top 1 @MaNSXOld=MaNSX from NSX order by MaNSX Desc
+		Return 'NSX' + format(right(@MaNSXOld,4)+1,'000#')
+end
 Go
 
-Declare @MaHD nvarchar(10) 
-Exec dbo.proc_CreateMaHD @MaHD output
-print @MaHD
+select dbo.fn_CreateMaNSX()
+-- Xây dựng hàm phát sinh mã NSX có dạng "NSX0001" theo thứ tự tăng dần
+Create function fn_CreateMaNSX()
+	returns nvarchar(10)
+begin
+		
+		declare @MaNSXOld varchar(10), @MaNSXNew nvarchar(10)
+		select Top 1 @MaNSXOld=MaNSX from NSX order by MaNSX Desc
+		Return 'NSX' + format(right(@MaNSXOld,4)+1,'000#')
+end
+Go
+
+select dbo.fn_CreateMaNSX()
+
+

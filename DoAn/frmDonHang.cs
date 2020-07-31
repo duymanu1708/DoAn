@@ -69,11 +69,12 @@ namespace DoAn
             {
                 MessageBox.Show(ex.ToString());
             }
+            addColCTHD();
             loadCTHD();
             loadSanPham();
             loadDSDT();
             loadDSDH();
-            addColCTHD();
+           
             bdDH_PositionChanged(sender, e);
             capNhat = false;
             ennableButton();
