@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSanPham));
             this.grTTS = new System.Windows.Forms.GroupBox();
+            this.txtTenSP = new System.Windows.Forms.TextBox();
+            this.txtTenNSX = new System.Windows.Forms.TextBox();
             this.txtDonVi = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtMaSP = new System.Windows.Forms.TextBox();
@@ -46,16 +48,15 @@
             this.btnSua = new DevExpress.XtraEditors.SimpleButton();
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.dgvSP = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenNSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
-            this.txtTenNSX = new System.Windows.Forms.TextBox();
-            this.txtTenSP = new System.Windows.Forms.TextBox();
             this.grTTS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSoLuong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSP)).BeginInit();
@@ -83,6 +84,20 @@
             this.grTTS.TabIndex = 20;
             this.grTTS.TabStop = false;
             this.grTTS.Text = "Thông Tin Sản Phẩm";
+            // 
+            // txtTenSP
+            // 
+            this.txtTenSP.Location = new System.Drawing.Point(125, 27);
+            this.txtTenSP.Name = "txtTenSP";
+            this.txtTenSP.Size = new System.Drawing.Size(166, 22);
+            this.txtTenSP.TabIndex = 18;
+            // 
+            // txtTenNSX
+            // 
+            this.txtTenNSX.Location = new System.Drawing.Point(125, 65);
+            this.txtTenNSX.Name = "txtTenNSX";
+            this.txtTenNSX.Size = new System.Drawing.Size(166, 22);
+            this.txtTenNSX.TabIndex = 17;
             // 
             // txtDonVi
             // 
@@ -230,6 +245,7 @@
             // 
             this.dgvSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.STT,
             this.MaSP,
             this.TenSP,
             this.TenNSX,
@@ -240,44 +256,7 @@
             this.dgvSP.Name = "dgvSP";
             this.dgvSP.Size = new System.Drawing.Size(852, 135);
             this.dgvSP.TabIndex = 13;
-            // 
-            // MaSP
-            // 
-            this.MaSP.DataPropertyName = "MaSP";
-            this.MaSP.HeaderText = "Mã SP";
-            this.MaSP.Name = "MaSP";
-            // 
-            // TenSP
-            // 
-            this.TenSP.DataPropertyName = "TenSP";
-            this.TenSP.HeaderText = "Tên Sản Phẩm";
-            this.TenSP.Name = "TenSP";
-            this.TenSP.Width = 200;
-            // 
-            // TenNSX
-            // 
-            this.TenNSX.DataPropertyName = "TenNSX";
-            this.TenNSX.HeaderText = "Tên NSX";
-            this.TenNSX.Name = "TenNSX";
-            this.TenNSX.Width = 200;
-            // 
-            // DonGia
-            // 
-            this.DonGia.DataPropertyName = "DonGia";
-            this.DonGia.HeaderText = "Đơn Gía";
-            this.DonGia.Name = "DonGia";
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.DataPropertyName = "SoLuong";
-            this.SoLuong.HeaderText = "Số Lượng";
-            this.SoLuong.Name = "SoLuong";
-            // 
-            // DonVi
-            // 
-            this.DonVi.DataPropertyName = "DonVi";
-            this.DonVi.HeaderText = "Đơn Vị";
-            this.DonVi.Name = "DonVi";
+            this.dgvSP.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvSP_DataBindingComplete);
             // 
             // label7
             // 
@@ -302,19 +281,47 @@
             this.btnThoat.Text = "Thoát";
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // txtTenNSX
+            // STT
             // 
-            this.txtTenNSX.Location = new System.Drawing.Point(125, 65);
-            this.txtTenNSX.Name = "txtTenNSX";
-            this.txtTenNSX.Size = new System.Drawing.Size(166, 22);
-            this.txtTenNSX.TabIndex = 17;
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
             // 
-            // txtTenSP
+            // MaSP
             // 
-            this.txtTenSP.Location = new System.Drawing.Point(125, 27);
-            this.txtTenSP.Name = "txtTenSP";
-            this.txtTenSP.Size = new System.Drawing.Size(166, 22);
-            this.txtTenSP.TabIndex = 18;
+            this.MaSP.DataPropertyName = "MaSP";
+            this.MaSP.HeaderText = "Mã SP";
+            this.MaSP.Name = "MaSP";
+            // 
+            // TenSP
+            // 
+            this.TenSP.DataPropertyName = "TenSP";
+            this.TenSP.HeaderText = "Tên Sản Phẩm";
+            this.TenSP.Name = "TenSP";
+            this.TenSP.Width = 200;
+            // 
+            // TenNSX
+            // 
+            this.TenNSX.DataPropertyName = "TenNSX";
+            this.TenNSX.HeaderText = "Tên NSX";
+            this.TenNSX.Name = "TenNSX";
+            // 
+            // DonGia
+            // 
+            this.DonGia.DataPropertyName = "DonGia";
+            this.DonGia.HeaderText = "Đơn Gía";
+            this.DonGia.Name = "DonGia";
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.DataPropertyName = "SoLuong";
+            this.SoLuong.HeaderText = "Số Lượng";
+            this.SoLuong.Name = "SoLuong";
+            // 
+            // DonVi
+            // 
+            this.DonVi.DataPropertyName = "DonVi";
+            this.DonVi.HeaderText = "Đơn Vị";
+            this.DonVi.Name = "DonVi";
             // 
             // frmSanPham
             // 
@@ -363,13 +370,14 @@
         private System.Windows.Forms.TextBox txtMaSP;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.SimpleButton btnThoat;
+        private System.Windows.Forms.TextBox txtTenSP;
+        private System.Windows.Forms.TextBox txtTenNSX;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenNSX;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonVi;
-        private System.Windows.Forms.TextBox txtTenSP;
-        private System.Windows.Forms.TextBox txtTenNSX;
     }
 }
