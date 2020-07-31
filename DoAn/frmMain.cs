@@ -69,17 +69,9 @@ namespace DoAn
             f.Show();
         }
 
-        private void btnLoaiSP_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnTongChi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmLoaiSanPham f = new frmLoaiSanPham();
-            TabPage p = new TabPage(f.Text);
-            p.Name = "tabLoaiSanPham";
-            f.TopLevel = false;
-            p.Controls.Add(f);
-            f.Dock = DockStyle.Fill;
-            f.FormBorderStyle = FormBorderStyle.None;
-            tabControl1.TabPages.Add(p);
-            f.Show();
+
         }
     }
 }

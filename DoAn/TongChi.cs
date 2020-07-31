@@ -16,14 +16,14 @@ namespace DoAn {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class ThongKeDoanhThu : ReportClass {
+    public class TongChi : ReportClass {
         
-        public ThongKeDoanhThu() {
+        public TongChi() {
         }
         
         public override string ResourceName {
             get {
-                return "ThongKeDoanhThu.rpt";
+                return "TongChi.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace DoAn {
         
         public override string FullResourceName {
             get {
-                return "DoAn.ThongKeDoanhThu.rpt";
+                return "DoAn.TongChi.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace DoAn {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedThongKeDoanhThu : Component, ICachedReport {
+    public class CachedTongChi : Component, ICachedReport {
         
-        public CachedThongKeDoanhThu() {
+        public CachedTongChi() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace DoAn {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            ThongKeDoanhThu rpt = new ThongKeDoanhThu();
+            TongChi rpt = new TongChi();
             rpt.Site = this.Site;
             return rpt;
         }

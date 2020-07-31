@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet2" targetNamespace="http://tempuri.org/DataSet2.xsd" xmlns:mstns="http://tempuri.org/DataSet2.xsd" xmlns="http://tempuri.org/DataSet2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QLNHASACHConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QLNHASACHConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DoAn.Properties.Settings.GlobalReference.Default.QLNHASACHConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTableChiTableAdapter" GeneratorDataComponentClassName="DataTableChiTableAdapter" Name="DataTableChi" UserDataComponentName="DataTableChiTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QLNHASACHConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        SANPHAM.MaSP, SANPHAM.TenSP, SANPHAM.SoLuong, SANPHAM.DonVi, SANPHAM.GiaGoc, NSX.MaNSX, SANPHAM.SoLuong * SANPHAM.GiaGoc AS TongChi
+FROM            SANPHAM INNER JOIN
+                         NSX ON SANPHAM.MaNSX = NSX.MaNSX</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MaSP" DataSetColumn="MaSP" />
+              <Mapping SourceColumn="TenSP" DataSetColumn="TenSP" />
+              <Mapping SourceColumn="SoLuong" DataSetColumn="SoLuong" />
+              <Mapping SourceColumn="DonVi" DataSetColumn="DonVi" />
+              <Mapping SourceColumn="GiaGoc" DataSetColumn="GiaGoc" />
+              <Mapping SourceColumn="MaNSX" DataSetColumn="MaNSX" />
+              <Mapping SourceColumn="TongChi" DataSetColumn="TongChi" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet2" msprop:Generator_UserDSName="DataSet2">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTableChi" msprop:Generator_TableClassName="DataTableChiDataTable" msprop:Generator_TableVarName="tableDataTableChi" msprop:Generator_TablePropName="DataTableChi" msprop:Generator_RowDeletingName="DataTableChiRowDeleting" msprop:Generator_RowChangingName="DataTableChiRowChanging" msprop:Generator_RowEvHandlerName="DataTableChiRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTableChiRowDeleted" msprop:Generator_UserTableName="DataTableChi" msprop:Generator_RowChangedName="DataTableChiRowChanged" msprop:Generator_RowEvArgName="DataTableChiRowChangeEvent" msprop:Generator_RowClassName="DataTableChiRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MaSP" msprop:Generator_ColumnVarNameInTable="columnMaSP" msprop:Generator_ColumnPropNameInRow="MaSP" msprop:Generator_ColumnPropNameInTable="MaSPColumn" msprop:Generator_UserColumnName="MaSP">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TenSP" msprop:Generator_ColumnVarNameInTable="columnTenSP" msprop:Generator_ColumnPropNameInRow="TenSP" msprop:Generator_ColumnPropNameInTable="TenSPColumn" msprop:Generator_UserColumnName="TenSP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SoLuong" msprop:Generator_ColumnVarNameInTable="columnSoLuong" msprop:Generator_ColumnPropNameInRow="SoLuong" msprop:Generator_ColumnPropNameInTable="SoLuongColumn" msprop:Generator_UserColumnName="SoLuong" type="xs:int" minOccurs="0" />
+              <xs:element name="DonVi" msprop:Generator_ColumnVarNameInTable="columnDonVi" msprop:Generator_ColumnPropNameInRow="DonVi" msprop:Generator_ColumnPropNameInTable="DonViColumn" msprop:Generator_UserColumnName="DonVi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GiaGoc" msprop:Generator_ColumnVarNameInTable="columnGiaGoc" msprop:Generator_ColumnPropNameInRow="GiaGoc" msprop:Generator_ColumnPropNameInTable="GiaGocColumn" msprop:Generator_UserColumnName="GiaGoc" type="xs:int" minOccurs="0" />
+              <xs:element name="MaNSX" msprop:Generator_ColumnVarNameInTable="columnMaNSX" msprop:Generator_ColumnPropNameInRow="MaNSX" msprop:Generator_ColumnPropNameInTable="MaNSXColumn" msprop:Generator_UserColumnName="MaNSX">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TongChi" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTongChi" msprop:Generator_ColumnPropNameInRow="TongChi" msprop:Generator_ColumnPropNameInTable="TongChiColumn" msprop:Generator_UserColumnName="TongChi" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTableChi" />
+      <xs:field xpath="mstns:MaSP" />
+      <xs:field xpath="mstns:MaNSX" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
