@@ -377,6 +377,7 @@
             this.btnInHD.Size = new System.Drawing.Size(85, 43);
             this.btnInHD.TabIndex = 9;
             this.btnInHD.Text = "In HD";
+            this.btnInHD.Click += new System.EventHandler(this.btnInHD_Click);
             // 
             // btnThoat
             // 

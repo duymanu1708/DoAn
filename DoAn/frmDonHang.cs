@@ -20,7 +20,7 @@ namespace DoAn
         SqlDataAdapter daKHACHHANG, daCTHD, daDONHANG, daSANPHAM;
         bool capNhat;
 
-        private void loadDSKH()
+        private void loadDSDH()
         {
             txtMaHD.DataBindings.Add("text", tblDONHANG, "MaHD", true);
             dtNgayLap.DataBindings.Add("text", tblDONHANG, "NgayLap", true);
@@ -72,7 +72,7 @@ namespace DoAn
             loadCTHD();
             loadSanPham();
             loadDSDT();
-            loadDSKH();
+            loadDSDH();
             addColCTHD();
             bdDH_PositionChanged(sender, e);
             capNhat = false;
@@ -226,6 +226,14 @@ namespace DoAn
         {
             capNhat = true;
             ennableButton();
+        }
+
+        private void btnInHD_Click(object sender, EventArgs e)
+        {
+            frmRP f = new frmRP();
+            f.MaHD = txtMaHD.Text;
+            f.WindowState = FormWindowState.Maximized;
+            f.Show();
         }
 
         BindingManagerBase bindDH, bindCTHD;
