@@ -34,6 +34,7 @@
             this.btnKhoSanPham = new DevExpress.XtraBars.BarButtonItem();
             this.btnDonHang = new DevExpress.XtraBars.BarButtonItem();
             this.btnThongKeDoanhThu = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTongChi = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -52,9 +53,10 @@
             this.btnKhachHang,
             this.btnKhoSanPham,
             this.btnDonHang,
-            this.btnThongKeDoanhThu});
+            this.btnThongKeDoanhThu,
+            this.btnTongChi});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 5;
+            this.ribbonControl1.MaxItemId = 6;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -89,12 +91,21 @@
             // 
             // btnThongKeDoanhThu
             // 
-            this.btnThongKeDoanhThu.Caption = "Thống Kê Doanh Thu";
+            this.btnThongKeDoanhThu.Caption = "Tổng Thu Nhập";
             this.btnThongKeDoanhThu.Id = 4;
             this.btnThongKeDoanhThu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThongKeDoanhThu.ImageOptions.Image")));
             this.btnThongKeDoanhThu.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThongKeDoanhThu.ImageOptions.LargeImage")));
             this.btnThongKeDoanhThu.Name = "btnThongKeDoanhThu";
             this.btnThongKeDoanhThu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThongKeDoanhThu_ItemClick);
+            // 
+            // btnTongChi
+            // 
+            this.btnTongChi.Caption = "Tổng Chi";
+            this.btnTongChi.Id = 5;
+            this.btnTongChi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTongChi.ImageOptions.Image")));
+            this.btnTongChi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTongChi.ImageOptions.LargeImage")));
+            this.btnTongChi.Name = "btnTongChi";
+            this.btnTongChi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTongChi_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -167,5 +178,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private DevExpress.XtraBars.BarButtonItem btnThongKeDoanhThu;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
+        private DevExpress.XtraBars.BarButtonItem btnTongChi;
     }
 }

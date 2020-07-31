@@ -377,6 +377,7 @@
             this.btnInHD.Size = new System.Drawing.Size(85, 43);
             this.btnInHD.TabIndex = 9;
             this.btnInHD.Text = "In HD";
+            this.btnInHD.Click += new System.EventHandler(this.btnInHD_Click);
             // 
             // btnThoat
             // 
@@ -484,7 +485,7 @@
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(319, 119);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(61, 16);
+            this.label15.Size = new System.Drawing.Size(65, 16);
             this.label15.TabIndex = 25;
             this.label15.Text = "Địa Chỉ:";
             // 
@@ -493,7 +494,7 @@
             this.radNam.AutoSize = true;
             this.radNam.Location = new System.Drawing.Point(422, 66);
             this.radNam.Name = "radNam";
-            this.radNam.Size = new System.Drawing.Size(58, 20);
+            this.radNam.Size = new System.Drawing.Size(59, 20);
             this.radNam.TabIndex = 24;
             this.radNam.TabStop = true;
             this.radNam.Text = "Nam";
@@ -504,7 +505,7 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(319, 70);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(74, 16);
+            this.label12.Size = new System.Drawing.Size(77, 16);
             this.label12.TabIndex = 23;
             this.label12.Text = "Giới Tính:";
             // 
@@ -520,7 +521,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(319, 27);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(87, 16);
+            this.label11.Size = new System.Drawing.Size(94, 16);
             this.label11.TabIndex = 21;
             this.label11.Text = "Họ Tên KH:";
             // 
@@ -538,7 +539,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(6, 119);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(113, 16);
+            this.label9.Size = new System.Drawing.Size(118, 16);
             this.label9.TabIndex = 19;
             this.label9.Text = "Tìm Theo SDT:";
             // 
@@ -556,7 +557,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(6, 71);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(105, 16);
+            this.label10.Size = new System.Drawing.Size(112, 16);
             this.label10.TabIndex = 5;
             this.label10.Text = "Ngày Lập HD:";
             // 
@@ -572,7 +573,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(6, 26);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(93, 16);
+            this.label8.Size = new System.Drawing.Size(97, 16);
             this.label8.TabIndex = 1;
             this.label8.Text = "Mã Hóa Đơn";
             // 

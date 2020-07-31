@@ -68,5 +68,10 @@ namespace DoAn
             tabControl1.TabPages.Add(p);
             f.Show();
         }
+
+        private void btnTongChi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }

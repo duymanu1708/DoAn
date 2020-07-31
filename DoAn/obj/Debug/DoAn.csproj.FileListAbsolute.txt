@@ -467,3 +467,4 @@ D:\New folder (7)\DoAn\DoAn\obj\Debug\DoAn.csproj.CoreCompileInputs.cache
 D:\New folder (7)\DoAn\DoAn\obj\Debug\DoAn.csproj.CopyComplete
 D:\New folder (7)\DoAn\DoAn\obj\Debug\DoAn.exe
 D:\New folder (7)\DoAn\DoAn\obj\Debug\DoAn.pdb
+D:\New folder (7)\DoAn\DoAn\obj\Debug\DoAn.frmTongChi.resources

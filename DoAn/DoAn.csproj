@@ -62,11 +62,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="classKetNoi.cs" />
+    <Compile Include="DataSetChi.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetChi.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmRP.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmRP.Designer.cs">
       <DependentUpon>frmRP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTongChi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTongChi.Designer.cs">
+      <DependentUpon>frmTongChi.cs</DependentUpon>
     </Compile>
     <Compile Include="InHD.cs">
       <AutoGen>True</AutoGen>
@@ -122,14 +133,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLNHASACHDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="ThongKeDoanhThu.cs">
+    <Compile Include="rpTongDoanhThu.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ThongKeDoanhThu.rpt</DependentUpon>
+      <DependentUpon>rpTongDoanhThu.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TongChi.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TongChi.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="frmRP.resx">
       <DependentUpon>frmRP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTongChi.resx">
+      <DependentUpon>frmTongChi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InHD.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -160,10 +180,25 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ThongKeDoanhThu.rpt">
+    <EmbeddedResource Include="rpTongDoanhThu.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ThongKeDoanhThu.cs</LastGenOutput>
+      <LastGenOutput>rpTongDoanhThu.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="TongChi.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TongChi.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="DataSetChi.xsc">
+      <DependentUpon>DataSetChi.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetChi.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetChi.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetChi.xss">
+      <DependentUpon>DataSetChi.xsd</DependentUpon>
+    </None>
     <None Include="DataSetHD.xsc">
       <DependentUpon>DataSetHD.xsd</DependentUpon>
     </None>
