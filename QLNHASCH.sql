@@ -39,9 +39,9 @@ CREATE TABLE SANPHAM(
 	TenSP nvarchar(50) NULL,
 	SoLuong int NULL,
 	DonVi nvarchar(20) NULL,
-	DonGia float NULL,
+	DonGia int NULL,
 	MaNSX varchar(10) NULL,
-	GiaGoc float NULL,
+	GiaGoc int NULL,
 	MaLoai int NULL,
 	CONSTRAINT PK_SanPham PRIMARY KEY (MaSP )
 )
