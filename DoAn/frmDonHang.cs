@@ -99,7 +99,13 @@ namespace DoAn
             foreach (DataGridViewRow r in dgvTTHD.Rows)
                 r.Cells[0].Value = r.Index + 1;
         }
-        
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            //dgvTTHD.DataSource = loadCTHD("select * from CTHD where TenKH like '%" + txtTimKiem.Text + "%'");
+        }
+
+
         private void enableButton()
         {
             btnThem.Enabled = !capnhat;

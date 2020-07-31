@@ -23,7 +23,7 @@ namespace DoAn
         {
             DataTable dt = new DataTable();
             classKetNoi kn = new classKetNoi();
-            dt = kn.laybang("SELECT DONHANG.MaHD, KHACHHANG.TenKH, KHACHHANG.MaKH, KHACHHANG.SoDT, SANPHAM.TenSP, SANPHAM.DonVi, SANPHAM.DonGia, CTHD.SoLuong, CTHD.SoLuong * SANPHAM.DonGia AS ThanhTien FROM DONHANG INNER JOIN CTHD ON DONHANG.MaHD = CTHD.MaHD INNER JOIN KHACHHANG ON DONHANG.MaKH = KHACHHANG.MaKH INNER JOIN SANPHAM ON CTHD.MaSP = SANPHAM.MaSP");
+            dt = kn.laybang("SELECT DONHANG.MaHD, KHACHHANG.TenKH, KHACHHANG.MaKH, KHACHHANG.SoDT, SANPHAM.TenSP, SANPHAM.DonVi, SANPHAM.DonGia, CTHD.SoLuong, CTHD.SoLuong * SANPHAM.DonGia AS ThanhTien FROM DONHANG INNER JOIN CTHD ON DONHANG.MaHD = CTHD.MaHD INNER JOIN KHACHHANG ON DONHANG.MaKH = KHACHHANG.MaKH INNER JOIN SANPHAM ON CTHD.MaSP = SANPHAM.MaSP where DONHANG.MaHD=CTHD.MaHD");
             InHD RP = new InHD();
             RP.SetDataSource(dt);
             crystalReportViewer1.ReportSource = RP;
@@ -39,7 +39,7 @@ namespace DoAn
             {
                 DataTable dt = new DataTable();
                 classKetNoi kn = new classKetNoi();
-                dt = kn.laybang("SELECT DONHANG.MaHD, KHACHHANG.TenKH, KHACHHANG.MaKH, KHACHHANG.SoDT, SANPHAM.TenSP, SANPHAM.DonVi, SANPHAM.DonGia, CTHD.SoLuong, CTHD.SoLuong * SANPHAM.DonGia AS ThanhTien FROM DONHANG INNER JOIN CTHD ON DONHANG.MaHD = CTHD.MaHD INNER JOIN KHACHHANG ON DONHANG.MaKH = KHACHHANG.MaKH INNER JOIN SANPHAM ON CTHD.MaSP = SANPHAM.MaSP where KHACHHANG.MaKH='" + txtTimkiemRP.Text + "'");
+                dt = kn.laybang("SELECT DONHANG.MaHD, KHACHHANG.TenKH, KHACHHANG.MaKH, KHACHHANG.SoDT, SANPHAM.TenSP, SANPHAM.DonVi, SANPHAM.DonGia, CTHD.SoLuong, CTHD.SoLuong * SANPHAM.DonGia AS ThanhTien FROM DONHANG INNER JOIN CTHD ON DONHANG.MaHD = CTHD.MaHD INNER JOIN KHACHHANG ON DONHANG.MaKH = KHACHHANG.MaKH INNER JOIN SANPHAM ON CTHD.MaSP = SANPHAM.MaSP where DONHANG.MaHD=CTHD.MaHD and KHACHHANG.MaKH='" + txtTimkiemRP.Text + "'");
                 InHD RP = new InHD();
                 RP.SetDataSource(dt);
                 crystalReportViewer1.ReportSource = RP;

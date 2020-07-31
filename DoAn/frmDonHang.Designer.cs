@@ -51,6 +51,13 @@
             this.Column7 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvTTHD = new System.Windows.Forms.DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.btnSua = new DevExpress.XtraEditors.SimpleButton();
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
@@ -77,13 +84,6 @@
             this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTTHD)).BeginInit();
             this.grTTKH.SuspendLayout();
@@ -283,6 +283,53 @@
             this.dgvTTHD.Name = "dgvTTHD";
             this.dgvTTHD.Size = new System.Drawing.Size(852, 135);
             this.dgvTTHD.TabIndex = 3;
+            // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "MaKH";
+            this.Column8.HeaderText = "Mã KH";
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 80;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "TenKH";
+            this.Column9.HeaderText = "Họ và tên";
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 200;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "NgayLap";
+            this.Column10.HeaderText = "Ngày mua";
+            this.Column10.Name = "Column10";
+            // 
+            // Column11
+            // 
+            this.Column11.DataPropertyName = "TenSP";
+            this.Column11.HeaderText = "Tên Sản Phẩm";
+            this.Column11.Name = "Column11";
+            this.Column11.Width = 200;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.DataPropertyName = "SoLuong";
+            this.SoLuong.HeaderText = "Số Lượng";
+            this.SoLuong.Name = "SoLuong";
+            this.SoLuong.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Column15
+            // 
+            this.Column15.DataPropertyName = "Tong";
+            this.Column15.HeaderText = "Thành Tiền:";
+            this.Column15.Name = "Column15";
+            this.Column15.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column15.Width = 150;
             // 
             // btnThem
             // 
@@ -518,6 +565,7 @@
             this.btnTimKiem.Size = new System.Drawing.Size(87, 32);
             this.btnTimKiem.TabIndex = 1;
             this.btnTimKiem.Text = "Tìm Kiếm";
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // txtTimKiem
             // 
@@ -526,53 +574,6 @@
             this.txtTimKiem.Size = new System.Drawing.Size(278, 20);
             this.txtTimKiem.TabIndex = 0;
             this.txtTimKiem.Text = "Nhập vào tên khách hàng đề tìm kiếm..";
-            // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "MaKH";
-            this.Column8.HeaderText = "Mã KH";
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 80;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "TenKH";
-            this.Column9.HeaderText = "Họ và tên";
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 200;
-            // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "NgayLap";
-            this.Column10.HeaderText = "Ngày mua";
-            this.Column10.Name = "Column10";
-            // 
-            // Column11
-            // 
-            this.Column11.DataPropertyName = "TenSP";
-            this.Column11.HeaderText = "Tên Sản Phẩm";
-            this.Column11.Name = "Column11";
-            this.Column11.Width = 200;
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.DataPropertyName = "SoLuong";
-            this.SoLuong.HeaderText = "Số Lượng";
-            this.SoLuong.Name = "SoLuong";
-            this.SoLuong.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Column15
-            // 
-            this.Column15.DataPropertyName = "Tong";
-            this.Column15.HeaderText = "Thành Tiền:";
-            this.Column15.Name = "Column15";
-            this.Column15.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column15.Width = 150;
             // 
             // frmDonHang
             // 

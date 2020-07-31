@@ -122,5 +122,13 @@ namespace DoAn
             capnhat = true;
             enableButton();
         }
+
+        private void dgvKH_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            foreach(DataGridViewRow r in dgvKH.Rows)
+            {
+                r.Cells[0].Value = r.Index + 1;
+            }
+        }
     }
 }

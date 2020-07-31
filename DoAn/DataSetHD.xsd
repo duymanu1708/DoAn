@@ -9,10 +9,11 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QLNHASACHConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QLNHASACHConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        DONHANG.MaHD, KHACHHANG.TenKH, KHACHHANG.MaKH, KHACHHANG.SoDT, SANPHAM.TenSP, SANPHAM.DonVi, SANPHAM.DonGia, CTHD.SoLuong, CTHD.SoLuong * SANPHAM.DonGia AS ThanhTien
+                    <CommandText>SELECT        DONHANG.MaHD, KHACHHANG.TenKH, KHACHHANG.MaKH, KHACHHANG.SoDT, SANPHAM.TenSP, SANPHAM.DonVi, SANPHAM.DonGia, CTHD.SoLuong, CTHD.SoLuong * SANPHAM.DonGia AS ThanhTien, 
+                         DONHANG.NgayLap
 FROM            DONHANG INNER JOIN
                          CTHD ON DONHANG.MaHD = CTHD.MaHD INNER JOIN
                          KHACHHANG ON DONHANG.MaKH = KHACHHANG.MaKH INNER JOIN
@@ -29,9 +30,10 @@ FROM            DONHANG INNER JOIN
               <Mapping SourceColumn="SoDT" DataSetColumn="SoDT" />
               <Mapping SourceColumn="TenSP" DataSetColumn="TenSP" />
               <Mapping SourceColumn="DonVi" DataSetColumn="DonVi" />
-              <Mapping SourceColumn="DonGia" DataSetColumn="DonGia" />
               <Mapping SourceColumn="SoLuong" DataSetColumn="SoLuong" />
-              <Mapping SourceColumn="ThanhTien" DataSetColumn="ThanhTien" />
+              <Mapping SourceColumn="DonGia" DataSetColumn="DonGia1" />
+              <Mapping SourceColumn="ThanhTien" DataSetColumn="ThanhTien1" />
+              <Mapping SourceColumn="NgayLap" DataSetColumn="NgayLap" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -91,6 +93,9 @@ FROM            DONHANG INNER JOIN
               <xs:element name="DonGia" msprop:Generator_ColumnVarNameInTable="columnDonGia" msprop:Generator_ColumnPropNameInRow="DonGia" msprop:Generator_ColumnPropNameInTable="DonGiaColumn" msprop:Generator_UserColumnName="DonGia" type="xs:double" minOccurs="0" />
               <xs:element name="SoLuong" msprop:Generator_ColumnVarNameInTable="columnSoLuong" msprop:Generator_ColumnPropNameInRow="SoLuong" msprop:Generator_ColumnPropNameInTable="SoLuongColumn" msprop:Generator_UserColumnName="SoLuong" type="xs:int" minOccurs="0" />
               <xs:element name="ThanhTien" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnThanhTien" msprop:Generator_ColumnPropNameInRow="ThanhTien" msprop:Generator_ColumnPropNameInTable="ThanhTienColumn" msprop:Generator_UserColumnName="ThanhTien" type="xs:double" minOccurs="0" />
+              <xs:element name="DonGia1" msdata:Caption="DonGia" msprop:Generator_ColumnVarNameInTable="columnDonGia1" msprop:Generator_ColumnPropNameInRow="DonGia1" msprop:Generator_ColumnPropNameInTable="DonGia1Column" msprop:Generator_UserColumnName="DonGia1" type="xs:int" minOccurs="0" />
+              <xs:element name="ThanhTien1" msdata:ReadOnly="true" msdata:Caption="ThanhTien" msprop:Generator_ColumnVarNameInTable="columnThanhTien1" msprop:Generator_ColumnPropNameInRow="ThanhTien1" msprop:Generator_ColumnPropNameInTable="ThanhTien1Column" msprop:Generator_UserColumnName="ThanhTien1" type="xs:int" minOccurs="0" />
+              <xs:element name="NgayLap" msprop:Generator_ColumnVarNameInTable="columnNgayLap" msprop:Generator_ColumnPropNameInRow="NgayLap" msprop:Generator_ColumnPropNameInTable="NgayLapColumn" msprop:Generator_UserColumnName="NgayLap" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
