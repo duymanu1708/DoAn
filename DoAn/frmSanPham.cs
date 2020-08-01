@@ -48,7 +48,7 @@ namespace DoAn
                 MessageBox.Show(ex.ToString());
             }
             var cmb = new SqlCommandBuilder(daSanPham);
-            //addcol();
+            addcol();
             loadCBONSX();
             loadCBOLoaiSP();
             loadDGVSP();
@@ -66,13 +66,11 @@ namespace DoAn
         private void addcol()
         {
             DataSet ds = new DataSet();
-            ds.Tables.AddRange(new DataTable[] { tblSanPham, tblNSX });
+            ds.Tables.AddRange(new DataTable[] { tblSanPham, tblNSX,tblLoaiSP });
             DataRelation qh = new DataRelation("FRK_NSX_SANPHAM", tblNSX.Columns["MaNSX"], tblSanPham.Columns["MaNSX"]);
             ds.Relations.Add(qh);
             DataColumn cTenNSX = new DataColumn("TenNSX", Type.GetType("System.String"), "Parent(FRK_NSX_SANPHAM).TenNSX");
             tblSanPham.Columns.Add(cTenNSX);
-
-            ds.Tables.AddRange(new DataTable[] { tblSanPham, tblLoaiSP });
             DataRelation qh1 = new DataRelation("FRK_LoaiSP_SANPHAM", tblLoaiSP.Columns["MaLoai"], tblSanPham.Columns["MaLoai"]);
             ds.Relations.Add(qh1);
             DataColumn cTenLoai = new DataColumn("TenLoai", Type.GetType("System.String"), "Parent(FRK_LoaiSP_SANPHAM).TenLoai");

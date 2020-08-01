@@ -375,7 +375,7 @@
             // 
             // LoaiSP
             // 
-            this.LoaiSP.DataPropertyName = "MaLoai";
+            this.LoaiSP.DataPropertyName = "TenLoai";
             this.LoaiSP.HeaderText = "Loại SP";
             this.LoaiSP.Name = "LoaiSP";
             this.LoaiSP.Width = 150;
