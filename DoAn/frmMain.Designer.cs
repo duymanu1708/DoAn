@@ -35,12 +35,15 @@
             this.btnDonHang = new DevExpress.XtraBars.BarButtonItem();
             this.btnThongKeDoanhThu = new DevExpress.XtraBars.BarButtonItem();
             this.btnTongChi = new DevExpress.XtraBars.BarButtonItem();
+            this.btnLoaiSP = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNSX = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,13 +57,16 @@
             this.btnKhoSanPham,
             this.btnDonHang,
             this.btnThongKeDoanhThu,
-            this.btnTongChi});
+            this.btnTongChi,
+            this.btnLoaiSP,
+            this.btnNSX,
+            this.barButtonItem1});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 6;
+            this.ribbonControl1.MaxItemId = 9;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(748, 141);
+            this.ribbonControl1.Size = new System.Drawing.Size(1066, 141);
             // 
             // btnKhachHang
             // 
@@ -105,7 +111,24 @@
             this.btnTongChi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTongChi.ImageOptions.Image")));
             this.btnTongChi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTongChi.ImageOptions.LargeImage")));
             this.btnTongChi.Name = "btnTongChi";
-            this.btnTongChi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTongChi_ItemClick);
+            // 
+            // btnLoaiSP
+            // 
+            this.btnLoaiSP.Caption = "Loại Sản Phẩm";
+            this.btnLoaiSP.Id = 6;
+            this.btnLoaiSP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLoaiSP.ImageOptions.Image")));
+            this.btnLoaiSP.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLoaiSP.ImageOptions.LargeImage")));
+            this.btnLoaiSP.Name = "btnLoaiSP";
+            this.btnLoaiSP.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLoaiSP_ItemClick);
+            // 
+            // btnNSX
+            // 
+            this.btnNSX.Caption = "Nhà Sản Xuất";
+            this.btnNSX.Id = 7;
+            this.btnNSX.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNSX.ImageOptions.Image")));
+            this.btnNSX.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNSX.ImageOptions.LargeImage")));
+            this.btnNSX.Name = "btnNSX";
+            this.btnNSX.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNSX_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -121,25 +144,27 @@
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.btnKhachHang);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "Khách Hàng";
             // 
             // ribbonPageGroup2
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.btnKhoSanPham);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnLoaiSP);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnNSX);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "Sản Phẩm";
             // 
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.btnDonHang);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "ribbonPageGroup3";
+            this.ribbonPageGroup3.Text = "Hóa Đơn";
             // 
             // ribbonPageGroup4
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.btnThongKeDoanhThu);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
-            this.ribbonPageGroup4.Text = "ribbonPageGroup4";
+            this.ribbonPageGroup4.Text = "TKDT";
             // 
             // tabControl1
             // 
@@ -147,18 +172,24 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 141);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(748, 277);
+            this.tabControl1.Size = new System.Drawing.Size(1066, 481);
             this.tabControl1.TabIndex = 1;
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 8;
+            this.barButtonItem1.Name = "barButtonItem1";
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(748, 418);
+            this.ClientSize = new System.Drawing.Size(1066, 622);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "frmMain";
-            this.Text = "frmMain";
+            this.Text = "Ứng Dụng Quản Lý Nhà Sách";
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -179,5 +210,8 @@
         private DevExpress.XtraBars.BarButtonItem btnThongKeDoanhThu;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.BarButtonItem btnTongChi;
+        private DevExpress.XtraBars.BarButtonItem btnLoaiSP;
+        private DevExpress.XtraBars.BarButtonItem btnNSX;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }

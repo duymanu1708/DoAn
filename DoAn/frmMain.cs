@@ -69,9 +69,30 @@ namespace DoAn
             f.Show();
         }
 
-        private void btnTongChi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnLoaiSP_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            frmLoaiSP f = new frmLoaiSP();
+            TabPage p = new TabPage(f.Text);
+            p.Name = "tabLoaiSP";
+            f.TopLevel = false;
+            p.Controls.Add(f);
+            f.Dock = DockStyle.Fill;
+            f.FormBorderStyle = FormBorderStyle.None;
+            tabControl1.TabPages.Add(p);
+            f.Show();
+        }
 
+        private void btnNSX_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmNSX f = new frmNSX();
+            TabPage p = new TabPage(f.Text);
+            p.Name = "tabNSX";
+            f.TopLevel = false;
+            p.Controls.Add(f);
+            f.Dock = DockStyle.Fill;
+            f.FormBorderStyle = FormBorderStyle.None;
+            tabControl1.TabPages.Add(p);
+            f.Show();
         }
     }
 }
