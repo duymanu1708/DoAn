@@ -109,8 +109,9 @@
             // txtDCNSX
             // 
             this.txtDCNSX.Location = new System.Drawing.Point(109, 115);
+            this.txtDCNSX.Multiline = true;
             this.txtDCNSX.Name = "txtDCNSX";
-            this.txtDCNSX.Size = new System.Drawing.Size(177, 22);
+            this.txtDCNSX.Size = new System.Drawing.Size(177, 40);
             this.txtDCNSX.TabIndex = 6;
             // 
             // groupBox1

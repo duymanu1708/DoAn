@@ -130,5 +130,28 @@ namespace DoAn
                 r.Cells[0].Value = r.Index + 1;
             }
         }
+
+        private void txtTimKiem_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtTimKiem.Text = "";
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataRow r = tblKhachHang.Select("MaKH='" + txtTimKiem.Text + "'")[0];
+                DSKH.Position = tblKhachHang.Rows.IndexOf(r);
+            }catch
+            {
+                MessageBox.Show("Không tìm thấy");
+            }
+        }
+
+        private void txtTimKiem_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+                btnTimKiem_Click(sender, e);
+        }
     }
 }

@@ -137,6 +137,30 @@ namespace DoAn
             enableButton();
         }
 
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataRow r = tblSanPham.Select("MaSP='" + txtTimKiem.Text + "'")[0];
+                bindSP.Position = tblSanPham.Rows.IndexOf(r);
+            }
+            catch
+            {
+                MessageBox.Show("Không tìm thấy");
+            }
+        }
+
+        private void txtTimKiem_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtTimKiem.Text = "";
+        }
+
+        private void txtTimKiem_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+                btnTimKiem_Click(sender, e);
+        }
+
         private void cboNSX_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = cboNSX.SelectedIndex;
