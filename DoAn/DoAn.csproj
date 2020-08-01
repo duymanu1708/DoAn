@@ -157,6 +157,12 @@
       <DependentUpon>TongChi.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="frmLoaiSP.resx">
+      <DependentUpon>frmLoaiSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNSX.resx">
+      <DependentUpon>frmNSX.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRP.resx">
       <DependentUpon>frmRP.cs</DependentUpon>
     </EmbeddedResource>
