@@ -209,6 +209,3 @@ end
 Go
 
 select dbo.fn_CreateMaSP()
-
-
-
