@@ -13,9 +13,9 @@ namespace DoAn
 {
     public partial class frmSanPham : Form
     {
-        DataTable tblSanPham,tblNSX;
-        SqlDataAdapter daSanPham,daNSX;
-        BindingManagerBase bindSP,bindNSX;
+        DataTable tblSanPham,tblNSX,tblLoaiSP;
+        SqlDataAdapter daSanPham,daNSX,daLoaiSP;
+        BindingManagerBase bindSP;
         bool capnhat = false;
         public frmSanPham()
         {
@@ -35,44 +35,66 @@ namespace DoAn
             daSanPham = new SqlDataAdapter("Select * from SANPHAM", Modules.cnnStr);
             tblNSX = new DataTable();
             daNSX = new SqlDataAdapter("select * from NSX", Modules.cnnStr);
+            tblLoaiSP = new DataTable();
+            daLoaiSP = new SqlDataAdapter("select * from LoaiSP",Modules.cnnStr);
             try
             {
                 daSanPham.Fill(tblSanPham);
-                daNSX.Fill(tblNSX);     
+                daNSX.Fill(tblNSX);
+                daLoaiSP.Fill(tblLoaiSP);     
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.ToString());
             }
             var cmb = new SqlCommandBuilder(daSanPham);
-            loadNSX();
+            addcol();
+            loadCBONSX();
+            loadCBOLoaiSP();
+            loadDGVSP();
             txtTenSP.DataBindings.Add("text", tblSanPham, "TenSP", true);
             txtMaSP.DataBindings.Add("text", tblSanPham, "MaSP", true);
             txtDonGia.DataBindings.Add("text", tblSanPham, "DonGia", true);
             txtDonVi.DataBindings.Add("text", tblSanPham, "DonVi", true);
             numSoLuong.DataBindings.Add("Value", tblSanPham, "SoLuong", true);
             txtGiaGoc.DataBindings.Add("text", tblSanPham, "GiaGoc", true);
-            cboNSX.DataSource = tblNSX;
-            cboNSX.DisplayMember = "TenNSX";
-            cboNSX.ValueMember = "MaNSX";
-            cboNSX.AutoCompleteMode = AutoCompleteMode.Suggest;
-            cboNSX.AutoCompleteSource = AutoCompleteSource.ListItems;
-            cboNSX.SelectedIndex = -1;
+            cboNSX.DataBindings.Add("SelectedValue", tblSanPham, "MaNSX", true);
+            cboLoaiSP.DataBindings.Add("SelectedValue", tblSanPham, "MaLoai", true);
             bindSP = this.BindingContext[tblSanPham];
             enableButton();
         }
-        private void loadNSX()
+        private void addcol()
         {
             DataSet ds = new DataSet();
-            ds.Tables.AddRange(new DataTable[] { tblSanPham,tblNSX  });
+            ds.Tables.AddRange(new DataTable[] { tblSanPham, tblNSX });
             DataRelation qh = new DataRelation("FRK_NSX_SANPHAM", tblNSX.Columns["MaNSX"], tblSanPham.Columns["MaNSX"]);
             ds.Relations.Add(qh);
             DataColumn cTenNSX = new DataColumn("TenNSX", Type.GetType("System.String"), "Parent(FRK_NSX_SANPHAM).TenNSX");
-            DataColumn cDiaChiNSX = new DataColumn("DiaChiNSX", Type.GetType("System.String"), "Parent(FRK_NSX_SANPHAM).DiaChiNSX");
             tblSanPham.Columns.Add(cTenNSX);
-            tblSanPham.Columns.Add(cDiaChiNSX);
+
+            ds.Tables.AddRange(new DataTable[] { tblSanPham, tblLoaiSP });
+            DataRelation qh1 = new DataRelation("FRK_LoaiSP_SANPHAM", tblLoaiSP.Columns["MaLoai"], tblSanPham.Columns["MaLoai"]);
+            ds.Relations.Add(qh1);
+            DataColumn cTenLoai = new DataColumn("TenLoai", Type.GetType("System.String"), "Parent(FRK_LoaiSP_SANPHAM).TenLoai");
+            tblSanPham.Columns.Add(cTenLoai);
+
+        }
+        private void loadDGVSP()
+        {
             dgvSP.AutoGenerateColumns = false;
             dgvSP.DataSource = tblSanPham;
+        }
+        private void loadCBOLoaiSP()
+        {
+            cboLoaiSP.DataSource = tblLoaiSP;
+            cboLoaiSP.DisplayMember = "TenLoai";
+            cboLoaiSP.ValueMember = "MaLoai";
+        }
+        private void loadCBONSX()
+        {
+            cboNSX.DataSource = tblNSX;
+            cboNSX.DisplayMember = "TenNSX";
+            cboNSX.ValueMember = "MaNSX";
         }
         private void enableButton()
         {
@@ -116,6 +138,19 @@ namespace DoAn
             capnhat = false;
             enableButton();
         }
+
+        private void cboNSX_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = cboNSX.SelectedIndex;
+            if(index>=0)
+            {
+                txtDiaChiNSX.Text = tblNSX.Rows[index]["DiaChiNSX"].ToString();
+            }else
+            {
+                txtDiaChiNSX.Text = "";
+            }
+        }
+
 
         private void dgvSP_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {

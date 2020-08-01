@@ -67,6 +67,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetChi.xsd</DependentUpon>
     </Compile>
+    <Compile Include="frmLoaiSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoaiSP.Designer.cs">
+      <DependentUpon>frmLoaiSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNSX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNSX.Designer.cs">
+      <DependentUpon>frmNSX.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRP.cs">
       <SubType>Form</SubType>
     </Compile>
