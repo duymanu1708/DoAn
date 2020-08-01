@@ -62,11 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="classKetNoi.cs" />
-    <Compile Include="DataSetChi.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetChi.xsd</DependentUpon>
-    </Compile>
     <Compile Include="frmLoaiSP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,12 +79,6 @@
     </Compile>
     <Compile Include="frmRP.Designer.cs">
       <DependentUpon>frmRP.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmTongChi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTongChi.Designer.cs">
-      <DependentUpon>frmTongChi.cs</DependentUpon>
     </Compile>
     <Compile Include="InHD.cs">
       <AutoGen>True</AutoGen>
@@ -135,26 +124,10 @@
     <Compile Include="Modules.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QLNHASACHDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLNHASACHDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="QLNHASACHDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLNHASACHDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="rpTongDoanhThu.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rpTongDoanhThu.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="TongChi.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TongChi.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="frmLoaiSP.resx">
@@ -165,9 +138,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRP.resx">
       <DependentUpon>frmRP.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmTongChi.resx">
-      <DependentUpon>frmTongChi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InHD.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -202,21 +172,6 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpTongDoanhThu.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="TongChi.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>TongChi.cs</LastGenOutput>
-    </EmbeddedResource>
-    <None Include="DataSetChi.xsc">
-      <DependentUpon>DataSetChi.xsd</DependentUpon>
-    </None>
-    <None Include="DataSetChi.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetChi.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSetChi.xss">
-      <DependentUpon>DataSetChi.xsd</DependentUpon>
-    </None>
     <None Include="DataSetHD.xsc">
       <DependentUpon>DataSetHD.xsd</DependentUpon>
     </None>
@@ -237,28 +192,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="QLNHASACHDataSet.xsc">
-      <DependentUpon>QLNHASACHDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QLNHASACHDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLNHASACHDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLNHASACHDataSet.xss">
-      <DependentUpon>QLNHASACHDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QLNHASACHDataSet1.xsc">
-      <DependentUpon>QLNHASACHDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="QLNHASACHDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLNHASACHDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLNHASACHDataSet1.xss">
-      <DependentUpon>QLNHASACHDataSet1.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
