@@ -59,8 +59,20 @@ namespace DoAn
         private void btnThem_Click(object sender, EventArgs e)
         {
             DSNSX.AddNew();
-            capnhat = true;
-            enableButton();
+            try
+            {
+                SqlCommand cmm = new SqlCommand("select dbo.fn_CreateMaNSX()", Modules.cnn);
+                Modules.cnn.Open();
+                txtMaNSX.Text = cmm.ExecuteScalar().ToString();
+                capnhat = true;
+                enableButton();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            Modules.cnn.Close();
+
         }
 
         private void btnSua_Click(object sender, EventArgs e)
