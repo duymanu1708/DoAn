@@ -375,7 +375,7 @@
             // 
             // LoaiSP
             // 
-            this.LoaiSP.DataPropertyName = "MaLoai";
+            this.LoaiSP.DataPropertyName = "TenLoai";
             this.LoaiSP.HeaderText = "Loại SP";
             this.LoaiSP.Name = "LoaiSP";
             this.LoaiSP.Width = 150;
@@ -408,6 +408,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(1119, 526);
             this.Controls.Add(this.grTTS);
             this.Controls.Add(this.btnThoat);
