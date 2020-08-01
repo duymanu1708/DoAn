@@ -48,7 +48,7 @@ namespace DoAn
                 MessageBox.Show(ex.ToString());
             }
             var cmb = new SqlCommandBuilder(daSanPham);
-            addcol();
+            //addcol();
             loadCBONSX();
             loadCBOLoaiSP();
             loadDGVSP();
