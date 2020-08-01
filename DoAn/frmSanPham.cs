@@ -108,8 +108,20 @@ namespace DoAn
         private void btnThem_Click(object sender, EventArgs e)
         {
             bindSP.AddNew();
-            capnhat = true;
-            enableButton();
+            try
+            {
+                SqlCommand cmm = new SqlCommand("select dbo.fn_CreateMaSP()", Modules.cnn);
+                Modules.cnn.Open();
+                txtMaSP.Text = cmm.ExecuteScalar().ToString();
+                capnhat = true;
+                enableButton();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            Modules.cnn.Close();
+            numSoLuong.Value = 0;
 
         }
 
