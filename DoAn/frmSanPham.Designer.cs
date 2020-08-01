@@ -30,6 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSanPham));
             this.grTTS = new System.Windows.Forms.GroupBox();
+            this.cboLoaiSP = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtDiaChiNSX = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cboNSX = new System.Windows.Forms.ComboBox();
             this.txtGiaGoc = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTenSP = new System.Windows.Forms.TextBox();
@@ -51,11 +56,11 @@
             this.dgvSP = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
-            this.cboNSX = new System.Windows.Forms.ComboBox();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenNSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LoaiSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GiaGoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,6 +73,10 @@
             // grTTS
             // 
             this.grTTS.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.grTTS.Controls.Add(this.cboLoaiSP);
+            this.grTTS.Controls.Add(this.label5);
+            this.grTTS.Controls.Add(this.txtDiaChiNSX);
+            this.grTTS.Controls.Add(this.label4);
             this.grTTS.Controls.Add(this.cboNSX);
             this.grTTS.Controls.Add(this.txtGiaGoc);
             this.grTTS.Controls.Add(this.label3);
@@ -89,6 +98,49 @@
             this.grTTS.TabIndex = 20;
             this.grTTS.TabStop = false;
             this.grTTS.Text = "Thông Tin Sản Phẩm";
+            // 
+            // cboLoaiSP
+            // 
+            this.cboLoaiSP.FormattingEnabled = true;
+            this.cboLoaiSP.Location = new System.Drawing.Point(554, 165);
+            this.cboLoaiSP.Name = "cboLoaiSP";
+            this.cboLoaiSP.Size = new System.Drawing.Size(166, 24);
+            this.cboLoaiSP.TabIndex = 25;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(480, 173);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(66, 16);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "Loại SP:";
+            // 
+            // txtDiaChiNSX
+            // 
+            this.txtDiaChiNSX.Location = new System.Drawing.Point(125, 135);
+            this.txtDiaChiNSX.Multiline = true;
+            this.txtDiaChiNSX.Name = "txtDiaChiNSX";
+            this.txtDiaChiNSX.Size = new System.Drawing.Size(166, 62);
+            this.txtDiaChiNSX.TabIndex = 23;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 138);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(95, 16);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Địa Chỉ NSX:";
+            // 
+            // cboNSX
+            // 
+            this.cboNSX.FormattingEnabled = true;
+            this.cboNSX.Location = new System.Drawing.Point(125, 101);
+            this.cboNSX.Name = "cboNSX";
+            this.cboNSX.Size = new System.Drawing.Size(166, 24);
+            this.cboNSX.TabIndex = 21;
+            this.cboNSX.SelectedIndexChanged += new System.EventHandler(this.cboNSX_SelectedIndexChanged);
             // 
             // txtGiaGoc
             // 
@@ -263,13 +315,14 @@
             this.MaSP,
             this.TenSP,
             this.TenNSX,
+            this.LoaiSP,
             this.DonGia,
             this.GiaGoc,
             this.SoLuong,
             this.DonVi});
             this.dgvSP.Location = new System.Drawing.Point(8, 350);
             this.dgvSP.Name = "dgvSP";
-            this.dgvSP.Size = new System.Drawing.Size(907, 135);
+            this.dgvSP.Size = new System.Drawing.Size(1078, 135);
             this.dgvSP.TabIndex = 13;
             this.dgvSP.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvSP_DataBindingComplete);
             // 
@@ -296,14 +349,6 @@
             this.btnThoat.Text = "Thoát";
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // cboNSX
-            // 
-            this.cboNSX.FormattingEnabled = true;
-            this.cboNSX.Location = new System.Drawing.Point(125, 101);
-            this.cboNSX.Name = "cboNSX";
-            this.cboNSX.Size = new System.Drawing.Size(166, 24);
-            this.cboNSX.TabIndex = 21;
-            // 
             // STT
             // 
             this.STT.HeaderText = "STT";
@@ -328,10 +373,17 @@
             this.TenNSX.HeaderText = "Tên NSX";
             this.TenNSX.Name = "TenNSX";
             // 
+            // LoaiSP
+            // 
+            this.LoaiSP.DataPropertyName = "MaLoai";
+            this.LoaiSP.HeaderText = "Loại SP";
+            this.LoaiSP.Name = "LoaiSP";
+            this.LoaiSP.Width = 150;
+            // 
             // DonGia
             // 
             this.DonGia.DataPropertyName = "DonGia";
-            this.DonGia.HeaderText = "Đơn Gía";
+            this.DonGia.HeaderText = "Đơn Gíá";
             this.DonGia.Name = "DonGia";
             // 
             // GiaGoc
@@ -403,10 +455,15 @@
         private System.Windows.Forms.TextBox txtGiaGoc;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cboNSX;
+        private System.Windows.Forms.TextBox txtDiaChiNSX;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cboLoaiSP;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenNSX;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LoaiSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn GiaGoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
