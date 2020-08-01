@@ -471,3 +471,5 @@ D:\New folder (7)\DoAn\DoAn\obj\Debug\DoAn.frmTongChi.resources
 D:\VTB\QLNS\DoAn\obj\Debug\DoAn.frmTongChi.resources
 D:\New folder (7)\DoAn\DoAn\obj\Debug\DoAn.frmLoaiSP.resources
 D:\New folder (7)\DoAn\DoAn\obj\Debug\DoAn.frmNSX.resources
+D:\VTB\QLNS\DoAn\obj\Debug\DoAn.frmLoaiSP.resources
+D:\VTB\QLNS\DoAn\obj\Debug\DoAn.frmNSX.resources

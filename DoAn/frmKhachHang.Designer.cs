@@ -116,16 +116,16 @@
             // 
             // txtDiaChi
             // 
-            this.txtDiaChi.Location = new System.Drawing.Point(84, 92);
+            this.txtDiaChi.Location = new System.Drawing.Point(90, 92);
             this.txtDiaChi.Multiline = true;
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(451, 72);
+            this.txtDiaChi.Size = new System.Drawing.Size(445, 72);
             this.txtDiaChi.TabIndex = 11;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(15, 97);
+            this.label12.Location = new System.Drawing.Point(6, 95);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(63, 16);
             this.label12.TabIndex = 10;

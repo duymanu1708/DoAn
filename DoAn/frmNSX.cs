@@ -115,5 +115,13 @@ namespace DoAn
             TabControl tabMain = (TabControl)p.Parent;
             tabMain.TabPages.Remove(p);
         }
+
+        private void dgvNSX_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            foreach (DataGridViewRow r in dgvNSX.Rows)
+            {
+                r.Cells[0].Value = r.Index + 1;
+            }
+        }
     }
 }
